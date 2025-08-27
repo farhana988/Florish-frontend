@@ -6,20 +6,7 @@ export const useNavbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const width = window.innerWidth;
-      let scrollThreshold;
-
-      if (width < 640) {
-        // Small screen
-        scrollThreshold = 100;
-      } else if (width >= 640 && width < 1024) {
-        // Medium screen
-        scrollThreshold = 300;
-      } else {
-        // Large screen
-        scrollThreshold = 400;
-      }
-
+      const scrollThreshold = 100;
       setScrolled(window.scrollY > scrollThreshold);
     };
 

@@ -1,5 +1,11 @@
+import WhyChooseUs from "@/components/modules/home/why-choose-us/WhyChooseUs";
+
 const HomePage = () => {
-  return <main></main>;
+  return (
+    <>
+      <WhyChooseUs />
+    </>
+  );
 };
 
 export default HomePage;

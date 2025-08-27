@@ -11,7 +11,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Navbar />
       {pathname === "/" && <Banner />}
-      <div className="max-w-[1600px] mx-auto min-h-screen px-6">{children}</div>
+      <div className="max-w-7xl mx-auto min-h-screen px-6">{children}</div>
       <Footer />
     </>
   );
