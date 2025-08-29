@@ -1,9 +1,8 @@
-import { Handbag, LucideUser, Menu, X } from "lucide-react";
-import Link from "next/link";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 import { useNavbar } from "@/hooks/useNavbar";
+import NavActions from "./NavActions";
 
 const Navbar = () => {
   const { scrolled, menuOpen, toggleMenu, closeMenu } = useNavbar();
@@ -21,25 +20,9 @@ const Navbar = () => {
         <NavLinks />
       </div>
 
-      <div className="flex items-center gap-4 md:gap-6">
-        {/* login */}
-        <Link href="/">
-          <LucideUser />
-        </Link>
-        {/* Cart link */}
-        <Link href="/cart">
-          <Handbag />
-        </Link>
+      {/* Right-side icons (login/cart/menu) */}
+      <NavActions menuOpen={menuOpen} toggleMenu={toggleMenu} />
 
-        {/* Mobile menu toggle button */}
-        <button
-          className=":hidden"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
       {/* Mobile menu component */}
       <MobileMenu isOpen={menuOpen} closeMenu={closeMenu} />
     </div>

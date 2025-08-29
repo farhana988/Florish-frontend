@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
           key={index}
           className="p-3 lg:p-6 h-full flex flex-col items-center text-center bg-white"
         >
-          <span className="bg-[#ecf4d3] px-4 pt-3 rounded-full mb-4">
+          <span className="bg-[#ecf4d3] px-4 py-4 rounded-full mb-4">
             <item.icon />
           </span>
           <h2 className="text-base font-medium mb-2">{item.title}</h2>
