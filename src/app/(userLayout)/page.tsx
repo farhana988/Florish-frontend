@@ -1,3 +1,4 @@
+import PromoSection from "@/components/modules/home/Promo/PromoSection";
 import TrendingProducts from "@/components/modules/home/Trending-Products/TrendingProducts";
 import WhyChooseUs from "@/components/modules/home/why-choose-us/WhyChooseUs";
 
@@ -6,6 +7,7 @@ const HomePage = () => {
     <>
       <WhyChooseUs />
       <TrendingProducts />
+      <PromoSection />
     </>
   );
 };

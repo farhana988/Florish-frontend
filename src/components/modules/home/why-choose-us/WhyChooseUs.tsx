@@ -1,3 +1,4 @@
+import IconWrapper from "@/components/shared/IconWrapper";
 import { plantFeaturesData } from "@/data/plantFeaturesData";
 
 const WhyChooseUs = () => {
@@ -8,9 +9,9 @@ const WhyChooseUs = () => {
           key={index}
           className="p-3 lg:p-6 h-full flex flex-col items-center text-center bg-white"
         >
-          <span className="bg-[#ecf4d3] px-4 py-4 rounded-full mb-4">
-            <item.icon />
-          </span>
+          <IconWrapper className="mb-4">
+            <item.icon className="w-5 h-5" />
+          </IconWrapper>
           <h2 className="text-base font-medium mb-2">{item.title}</h2>
 
           <p className="text-xs text-gray-400 min-h-8">{item.description}</p>
