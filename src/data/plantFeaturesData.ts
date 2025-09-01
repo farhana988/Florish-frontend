@@ -1,4 +1,4 @@
-import { CreditCard, Truck, PackageCheck, Heart } from "lucide-react";
+import { CreditCard, Truck, PackageCheck, Heart, Undo2 } from "lucide-react";
 
 export const plantFeaturesData = [
   {
@@ -20,5 +20,10 @@ export const plantFeaturesData = [
     title: "Excellent Service",
     description: "Friendly support for all your questions.",
     icon: Heart,
+  },
+  {
+    title: "180 Days Return",
+    description: "Return your plants within 180 days hassle-free.",
+    icon: Undo2,
   },
 ];

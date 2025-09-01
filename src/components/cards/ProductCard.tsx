@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Handbag } from "lucide-react";
-import StarRating from "../modules/home/Trending-Products/StarRating";
+import StarRating from "../shared/StarRating";
+import ProductBadge from "../shared/ProductBadge";
 
 interface Product {
   id: number;
@@ -10,6 +11,7 @@ interface Product {
   price: number;
   rating: number;
   image: string;
+  badge?: string;
 }
 
 interface ProductCardProps {
@@ -35,6 +37,8 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         >
           <Handbag className="text-gray-500" />
         </button>
+        {/* Badge */}
+        {product.badge && <ProductBadge text={product.badge} />}
       </div>
 
       {/* Rating */}

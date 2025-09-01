@@ -21,14 +21,15 @@ const ShowcaseBanner = () => {
       {/* Text + CTA */}
       <div className="relative z-20 px-4">
         <p className="text-base md:text-lg lg:text-xl mb-4 text-[#999999]">
-          You are at the right step now
+          Bring nature into your home
         </p>
 
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-light mb-6 text-[#D19E84] leading-tight">
-          Purchase Minplant
-          <br />& Creat Beautiful Online Stores
+          Fresh, Healthy Plants Delivered
+          <br />
+          Right to Your Door
         </h1>
-        <OutlineBtn text="Buy Minplant Now" href="/shop" />
+        <OutlineBtn text="Shop All Plants" href="/shop" />
       </div>
     </section>
   );

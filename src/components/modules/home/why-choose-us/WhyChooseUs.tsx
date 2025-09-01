@@ -3,7 +3,7 @@ import { plantFeaturesData } from "@/data/plantFeaturesData";
 
 const WhyChooseUs = () => {
   return (
-    <div className="py-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-6 border-b">
+    <div className="py-8 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 lg:gap-6 border-b">
       {plantFeaturesData.map((item, index) => (
         <div
           key={index}
@@ -13,7 +13,6 @@ const WhyChooseUs = () => {
             <item.icon className="w-5 h-5" />
           </IconWrapper>
           <h2 className="text-base font-medium mb-2">{item.title}</h2>
-
           <p className="text-xs text-gray-400 min-h-8">{item.description}</p>
         </div>
       ))}

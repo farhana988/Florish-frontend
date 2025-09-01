@@ -5,6 +5,7 @@ export interface Product {
   price: number;
   rating: number;
   image: string;
+  badge?: string;
 }
 
 export const products: Product[] = [
@@ -15,6 +16,7 @@ export const products: Product[] = [
     price: 95,
     rating: 4,
     image: "/plant1.png",
+    badge: "Sale!",
   },
   {
     id: 2,
@@ -31,5 +33,6 @@ export const products: Product[] = [
     price: 85,
     rating: 5,
     image: "/plant3.png",
+    badge: "New",
   },
 ];

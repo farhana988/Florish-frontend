@@ -204,3 +204,17 @@ button {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.nonagon-badge {
+  clip-path: polygon(
+    50% 0%,
+    82% 13%,
+    97% 43%,
+    94% 78%,
+    71% 100%,
+    29% 100%,
+    6% 78%,
+    3% 43%,
+    18% 13%
+  );
+}
