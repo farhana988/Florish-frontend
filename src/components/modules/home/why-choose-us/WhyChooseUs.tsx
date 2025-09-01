@@ -3,7 +3,7 @@ import { plantFeaturesData } from "@/data/plantFeaturesData";
 
 const WhyChooseUs = () => {
   return (
-    <div className="py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6 border-b">
+    <div className="py-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-6 border-b">
       {plantFeaturesData.map((item, index) => (
         <div
           key={index}

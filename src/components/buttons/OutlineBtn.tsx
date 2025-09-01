@@ -21,7 +21,7 @@ const OutlineBtn: React.FC<BannerButtonProps> = ({
     <Button
       variant={variant}
       onClick={onClick}
-      className={`rounded-full bg-black/20 ${className}`}
+      className={`rounded-full bg-black/20 text-white ${className}`}
     >
       {text}
     </Button>
