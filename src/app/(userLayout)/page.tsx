@@ -1,4 +1,5 @@
 import Categories from "@/components/modules/home/Categories/Categories";
+import PlantCareTips from "@/components/modules/home/plan-care-tips/PlantCareTips";
 import PromoSection from "@/components/modules/home/Promo/PromoSection";
 import ShowcaseBanner from "@/components/modules/home/ShowcaseBanner/ShowcaseBanner";
 import TrendingProducts from "@/components/modules/home/Trending-Products/TrendingProducts";
@@ -14,6 +15,9 @@ const HomePage = () => {
         <Categories />
       </section>
       <ShowcaseBanner />
+      <section className="px-6 ">
+        <PlantCareTips />
+      </section>
     </>
   );
 };
