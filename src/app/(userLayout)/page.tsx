@@ -1,3 +1,4 @@
+import FlashSale from "@/components/flash-sale/FlashSale";
 import Categories from "@/components/modules/home/Categories/Categories";
 import PlantCareTips from "@/components/modules/home/plan-care-tips/PlantCareTips";
 import PromoSection from "@/components/modules/home/Promo/PromoSection";
@@ -14,10 +15,11 @@ const HomePage = () => {
         <PromoSection />
         <Categories />
       </section>
-      <ShowcaseBanner />
+      <FlashSale />
       <section className="px-6 ">
         <PlantCareTips />
       </section>
+      <ShowcaseBanner />
     </>
   );
 };

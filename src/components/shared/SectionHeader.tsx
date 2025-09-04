@@ -6,7 +6,7 @@ interface SectionHeaderProps {
 const SectionHeader = ({ title, className }: SectionHeaderProps) => {
   return (
     <h2
-      className={`text-3xl lg:text-[42px] sm:text-3xl headline text-center mb-16 ${className}`}
+      className={`text-3xl lg:text-[42px] sm:text-3xl headline text-center my-16 ${className}`}
     >
       {title}
     </h2>
