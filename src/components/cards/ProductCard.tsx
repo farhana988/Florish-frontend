@@ -21,7 +21,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
-    <Link href={`/products/${product.id}`} className="group space-y-1">
+    <Link href={`/shop/${product.id}`} className="group space-y-1">
       <div className="relative w-full h-[420px] mb-4 bg-gray-100 rounded overflow-hidden">
         <Image
           src={product.image}
