@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Florish",
   description: "Online plant ordering website",
+  icons: {
+    icon: [{ url: "/logo.png" }],
+  },
 };
 
 export default function RootLayout({
