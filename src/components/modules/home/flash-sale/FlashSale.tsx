@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import OutlineBtn from "../buttons/OutlineBtn";
+import OutlineBtn from "../../../buttons/OutlineBtn";
 
 const FlashSale = () => {
   return (

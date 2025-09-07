@@ -1,4 +1,4 @@
-import FlashSale from "@/components/flash-sale/FlashSale";
+import FlashSale from "@/components/modules/home/flash-sale/FlashSale";
 import Categories from "@/components/modules/home/Categories/Categories";
 import PlantCareTips from "@/components/modules/home/plan-care-tips/PlantCareTips";
 import PromoSection from "@/components/modules/home/Promo/PromoSection";
