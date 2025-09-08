@@ -16,7 +16,7 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
       {bannerData && <Banner {...bannerData} />}
       <div
         className={`max-w-7xl mx-auto min-h-screen space-y-16 lg:space-y-20
-         ${isHome ? "px-0" : "px-6"} `}
+         ${isHome ? "px-0" : "px-6 mt-20"} `}
       >
         {children}
       </div>

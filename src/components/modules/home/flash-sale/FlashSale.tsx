@@ -24,7 +24,7 @@ const FlashSale = () => {
 
         <p className="text-xs md:text-sm lg:text-base text-white mb-8">
           Don’t miss out on our flash sale event! For a limited time, enjoy up
-          to 50% off on a selection of our best-selling products.
+          to 50% off on a selection of our best-selling plants.
         </p>
 
         <OutlineBtn

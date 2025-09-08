@@ -1,18 +1,18 @@
 export const plantCategories = [
   {
     title: "Houseplants",
-    image: "/house-plant.png",
+    image: "/category/house-plant.png",
   },
   {
     title: "Outdoor Plants",
-    image: "/outdoor-plant.png",
+    image: "/category/outdoor-plant.png",
   },
   {
     title: "Succulents",
-    image: "/succulents.png",
+    image: "/category/succulents.png",
   },
   {
     title: "Desert Bloom",
-    image: "/dessert-bloom.png",
+    image: "/category/dessert-bloom.png",
   },
 ];

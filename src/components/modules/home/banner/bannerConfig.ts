@@ -8,24 +8,24 @@ const bannerConfig: {
   };
 } = {
   "/": {
-    imageUrl: "/banner.jpg",
+    imageUrl: "/banner/banner.jpg",
     title: "Beautiful Greens with Care\nDelivered Straight to Your Door",
     subtitle: "Welcome to Flora",
     buttonText: "Shop now",
     buttonLink: "/shop",
   },
   "/shop": {
-    imageUrl: "/shop-banner.jpg",
-    title: "Shop All Products",
+    imageUrl: "/banner/shop-banner.jpg",
+    title: "Shop All Plants",
     subtitle: "Freshness at your fingertips",
   },
   "/about": {
-    imageUrl: "/about-banner.jpg",
+    imageUrl: "/banner/about-banner.jpg",
     title: "About Us",
     subtitle: "Learn more about who we are",
   },
   "/contact": {
-    imageUrl: "/contact-banner.jpg",
+    imageUrl: "/banner/contact-banner.jpg",
     title: "Contact Us",
     subtitle: "We’re here to help",
   },

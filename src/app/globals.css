@@ -189,6 +189,11 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .bg-dGreen {
+    background-color: #3c5133e3;
+  }
+}
 
 a,
 button {
