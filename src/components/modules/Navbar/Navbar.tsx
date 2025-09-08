@@ -8,8 +8,9 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const { scrolled, menuOpen, toggleMenu, closeMenu } = useNavbar();
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  const backgroundClass = isHome
+  const transparentRoutes = ["/", "/shop", "/about", "/contact"];
+  const isTransparentRoute = transparentRoutes.includes(pathname);
+  const backgroundClass = isTransparentRoute
     ? scrolled
       ? "bg-black/90 backdrop-blur-md"
       : "bg-none"
