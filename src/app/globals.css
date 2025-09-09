@@ -193,6 +193,9 @@
   .bg-dGreen {
     background-color: #3c5133e3;
   }
+  .text-dGreen {
+    color: #3c5133e3;
+  }
 }
 
 a,
