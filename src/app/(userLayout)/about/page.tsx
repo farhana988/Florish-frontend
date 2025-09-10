@@ -1,10 +1,6 @@
 import AboutPage from "@/components/modules/about/AboutPage";
 const about = () => {
-  return (
-    <div>
-      <AboutPage />
-    </div>
-  );
+  return <AboutPage />;
 };
 
 export default about;

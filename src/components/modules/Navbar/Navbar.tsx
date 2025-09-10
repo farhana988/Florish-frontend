@@ -3,19 +3,11 @@ import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 import { useNavbar } from "@/hooks/useNavbar";
 import NavActions from "./NavActions";
-import { usePathname } from "next/navigation";
+import { useTransparentNavbar } from "@/hooks/useTransparentNavbar";
 
 const Navbar = () => {
   const { scrolled, menuOpen, toggleMenu, closeMenu } = useNavbar();
-  const pathname = usePathname();
-  const transparentRoutes = ["/", "/shop", "/about", "/contact"];
-  const isTransparentRoute = transparentRoutes.includes(pathname);
-  const backgroundClass = isTransparentRoute
-    ? scrolled
-      ? "bg-black/90 backdrop-blur-md"
-      : "bg-none"
-    : "bg-black";
-
+  const { backgroundClass } = useTransparentNavbar(scrolled);
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-50 max-w-[1600px] mx-auto px-6 

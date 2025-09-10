@@ -196,6 +196,9 @@
   .text-dGreen {
     color: #3c5133e3;
   }
+  .border-dGreen {
+    border-color: #3c5133e3;
+  }
 }
 
 a,

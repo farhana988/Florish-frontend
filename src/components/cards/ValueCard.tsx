@@ -17,7 +17,7 @@ const ValueCard = ({
   textAlign = "center",
 }: ValueCardProps) => {
   return (
-    <Card>
+    <Card className="border-dGreen border-0 border-b-2 shadow-none hover:shadow-md">
       <CardHeader className={`flex flex-col items-center text-${textAlign}`}>
         <span className={iconColor}>{icon}</span>
         <CardTitle className="text-xl">{title}</CardTitle>

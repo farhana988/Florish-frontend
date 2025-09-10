@@ -4,7 +4,7 @@ import BenefitItem from "./BenefitItem";
 const PromoTextContent = () => {
   return (
     <div className="max-w-sm lg:max-w-lg xl:max-w-2xl">
-      <h1 className="text-3xl lg:text-4xl xl:text-5xl leading-tight headline">
+      <h1 className="text-3xl lg:text-4xl xl:text-5xl leading-tight">
         Decorate your <br />
         home with plants
       </h1>
