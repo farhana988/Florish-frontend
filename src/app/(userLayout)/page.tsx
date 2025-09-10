@@ -9,16 +9,12 @@ import WhyChooseUs from "@/components/modules/home/why-choose-us/WhyChooseUs";
 const HomePage = () => {
   return (
     <>
-      <section className="px-6 ">
-        <WhyChooseUs />
-        <TrendingProducts />
-        <PromoSection />
-        <Categories />
-      </section>
+      <WhyChooseUs />
+      <TrendingProducts />
+      <PromoSection />
+      <Categories />
       <FlashSale />
-      <section className="px-6 ">
-        <PlantCareTips />
-      </section>
+      <PlantCareTips />
       <ShowcaseBanner />
     </>
   );
