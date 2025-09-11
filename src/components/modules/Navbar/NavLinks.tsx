@@ -30,7 +30,11 @@ const NavLinks = ({ onClick, className = "" }: NavLinksProps) => {
             onClick={onClick}
             className={`
               relative group text-xs lg:text-sm xl:text-base transition-transform
-              ${isActive ? "-translate-y-1 headline " : "hover:-translate-y-1"}
+              ${
+                isActive
+                  ? "-translate-y-1.5 headline text-sm lg:text-base xl:text-lg"
+                  : "hover:-translate-y-1 text-xs lg:text-sm xl:text-base"
+              }
             `}
           >
             {link.label}
