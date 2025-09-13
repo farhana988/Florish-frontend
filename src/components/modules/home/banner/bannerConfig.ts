@@ -10,7 +10,7 @@ const bannerConfig: {
   "/": {
     imageUrl: "/banner/banner.jpg",
     title: "Beautiful Greens with Care\nDelivered Straight to Your Door",
-    subtitle: "Welcome to Flora",
+    subtitle: "Welcome to Florish",
     buttonText: "Shop now",
     buttonLink: "/shop",
   },

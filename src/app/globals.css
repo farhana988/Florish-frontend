@@ -229,3 +229,49 @@ button {
     18% 13%
   );
 }
+
+/* loading spinner */
+
+/* Custom Animations */
+@layer utilities {
+  /* Leaf Bounce Animation */
+  @keyframes leafBounce {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-10deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(0deg);
+    }
+  }
+
+  .animate-leaf-bounce {
+    animation: leafBounce 2s infinite ease-in-out;
+  }
+
+  /* Sprout Animation */
+  @keyframes sprout {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  .animate-sprout {
+    animation: sprout 1.2s infinite ease-in-out;
+  }
+
+  /* Optional: Delay modifiers */
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-600 {
+    animation-delay: 600ms;
+  }
+}

@@ -1,9 +1,10 @@
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
+import LocationMap from "./LocationMap";
 
 const ContactPage = () => {
   return (
-    <div>
+    <>
       <h2 className="text-4xl font-semibold text-center mb-6">
         We&apos;d Love To Hear From You!
       </h2>
@@ -18,7 +19,8 @@ const ContactPage = () => {
         <ContactInfo />
         <ContactForm />
       </div>
-    </div>
+      <LocationMap />
+    </>
   );
 };
 
