@@ -21,7 +21,7 @@ const PlantCareCard = ({ tip }: PlantCareCardProps) => {
       </div>
       <CardContent className="flex flex-col flex-grow">
         <div className="flex-grow">
-          <h3 className="text-xl lg:text-2xl font-semibold text-[#1c1f13] mb-2">
+          <h3 className="text-xl xl:text-2xl font-semibold text-[#1c1f13] mb-2">
             {tip.title}
           </h3>
           <p className="text-xs text-gray-600 mb-2">{tip.date}</p>

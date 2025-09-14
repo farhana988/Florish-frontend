@@ -10,7 +10,8 @@ const links = [
   { id: 1, href: "/", label: "Home" },
   { id: 2, href: "/shop", label: "Shop" },
   { id: 3, href: "/about", label: "About" },
-  { id: 4, href: "/contact", label: "Contact" },
+  { id: 4, href: "/plant-care", label: "Plant Care" },
+  { id: 5, href: "/contact", label: "Contact" },
 ];
 
 const NavLinks = ({ onClick, className = "" }: NavLinksProps) => {

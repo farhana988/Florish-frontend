@@ -14,7 +14,7 @@ export const footerData = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Our Story", href: "/our-story" },
-      { name: "Careers", href: "/careers" },
+
       { name: "Contact", href: "/contact" },
     ],
   },
@@ -23,7 +23,7 @@ export const footerData = [
     links: [
       { name: "All Bouquets", href: "/shop/bouquets" },
       { name: "Weddings & Events", href: "/shop/weddings-events" },
-      { name: "Subscriptions", href: "/shop/subscriptions" },
+
       { name: "Custom Orders", href: "/shop/custom-orders" },
     ],
   },
@@ -33,7 +33,6 @@ export const footerData = [
       { name: "Shipping & Delivery", href: "/support/shipping" },
       { name: "Returns & Refunds", href: "/support/returns" },
       { name: "FAQ", href: "/support/faq" },
-      { name: "Floral Care Tips", href: "/support/floral-care" },
     ],
   },
 ];

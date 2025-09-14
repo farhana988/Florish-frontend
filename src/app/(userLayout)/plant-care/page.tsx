@@ -1,11 +1,8 @@
+import PlantCareTips from "@/components/modules/home/plan-care-tips/PlantCareTips";
 import React from "react";
 
 const plantCare = () => {
-  return (
-    <div>
-      <h3>plant care</h3>
-    </div>
-  );
+  return <PlantCareTips />;
 };
 
 export default plantCare;

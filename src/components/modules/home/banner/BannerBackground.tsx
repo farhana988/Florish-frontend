@@ -1,17 +1,11 @@
-import { usePathname } from "next/navigation";
-import React from "react";
-
+import useIsHome from "@/hooks/useIsHome";
 interface BannerBackgroundProps {
   imageUrl: string;
   children: React.ReactNode;
 }
 
-const BannerBackground: React.FC<BannerBackgroundProps> = ({
-  imageUrl,
-  children,
-}) => {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
+const BannerBackground = ({ imageUrl, children }: BannerBackgroundProps) => {
+  const isHome = useIsHome();
   const heightClasses = isHome
     ? "h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]"
     : "h-[280px] md:h-[350px] lg:h-[420px] xl:h-[490px]";

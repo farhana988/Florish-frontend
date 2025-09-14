@@ -24,6 +24,12 @@ const bannerConfig: {
     title: "About Us",
     subtitle: "Learn more about who we are",
   },
+  "/plant-care": {
+    imageUrl: "/banner/plant-care-banner.jpg",
+    title: "Plant & Garden Care",
+    subtitle: "Discover tips, tricks, and advice for healthy plants",
+  },
+
   "/contact": {
     imageUrl: "/banner/contact-banner.jpg",
     title: "Contact Us",

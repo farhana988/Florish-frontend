@@ -1,17 +1,21 @@
+"use client";
 import PlantCareCard from "@/components/cards/PlantCareCard";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { tips } from "@/data/plantCareData";
+import useIsHome from "@/hooks/useIsHome";
 
 const PlantCareTips = () => {
+  const isHome = useIsHome();
+  const tipsToDisplay = isHome ? tips.slice(0, 3) : tips;
   return (
-    <div>
-      <SectionHeader title="Plant Care Tips And Tricks" />
+    <>
+      {isHome && <SectionHeader title="Plant Care Tips And Tricks" />}
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {tips.map((tip, index) => (
-          <PlantCareCard key={index} tip={tip} />
+        {tipsToDisplay.map((tip) => (
+          <PlantCareCard key={tip.id} tip={tip} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
