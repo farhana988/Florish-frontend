@@ -17,7 +17,7 @@ interface ProductCardProps {
   product: Product;
 }
 
-const ShopDetails = ({ product }: ProductCardProps) => {
+const ShopDetails = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-6 max-w-6xl mx-auto items-start">
       {/* Product Image */}

@@ -14,7 +14,6 @@ export const footerData = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Our Story", href: "/our-story" },
-
       { name: "Contact", href: "/contact" },
     ],
   },
@@ -23,7 +22,6 @@ export const footerData = [
     links: [
       { name: "All Bouquets", href: "/shop/bouquets" },
       { name: "Weddings & Events", href: "/shop/weddings-events" },
-
       { name: "Custom Orders", href: "/shop/custom-orders" },
     ],
   },
