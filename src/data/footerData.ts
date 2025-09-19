@@ -28,7 +28,7 @@ export const footerData = [
   {
     title: "Support",
     links: [
-      { name: "Shipping & Delivery", href: "/support/shipping" },
+      { name: "Terms & Conditions", href: "/support/terms" },
       { name: "Returns & Refunds", href: "/support/returns" },
       { name: "FAQ", href: "/support/faq" },
     ],
