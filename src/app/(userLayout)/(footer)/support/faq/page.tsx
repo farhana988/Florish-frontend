@@ -1,4 +1,4 @@
-import FAQSection from "@/components/modules/faq/FAQSection";
+import FAQSection from "@/components/modules/support/faq/FAQSection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Accordion } from "@/components/ui/accordion";
 import faqData from "@/data/faqData";

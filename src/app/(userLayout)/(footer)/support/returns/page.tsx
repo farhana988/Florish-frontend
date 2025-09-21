@@ -1,6 +1,6 @@
-import ReturnConditions from "@/components/modules/returns-refunds/ReturnConditions";
-import ReturnModalityTable from "@/components/modules/returns-refunds/ReturnModalityTable";
-import ReturnStep from "@/components/modules/returns-refunds/ReturnStep";
+import ReturnConditions from "@/components/modules/support/returns-refunds/ReturnConditions";
+import ReturnModalityTable from "@/components/modules/support/returns-refunds/ReturnModalityTable";
+import ReturnStep from "@/components/modules/support/returns-refunds/ReturnStep";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { modalityData, returnConditions, returnSteps } from "@/data/returnData";
 
