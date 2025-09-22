@@ -3,7 +3,7 @@ import { ReturnModalityTableProps } from "@/data/returnData";
 const ReturnModalityTable = ({ data }: ReturnModalityTableProps) => {
   return (
     <div className="overflow-x-auto">
-      <h2 className="text-xl mt-6 mb-2">Return Options</h2>
+      <h2 className="text-xl md:text-2xl mt-6 mb-2">Return Options</h2>
       <table className="min-w-full border-collapse table-auto">
         <thead>
           <tr>

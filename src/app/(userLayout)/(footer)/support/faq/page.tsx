@@ -5,7 +5,7 @@ import faqData from "@/data/faqData";
 
 const Faq = () => {
   return (
-    <div className="xl:pt-1">
+    <>
       <SectionHeader
         title="Got Questions?"
         subtitle="Find answers to the most common questions about our plant store and care
@@ -23,7 +23,7 @@ const Faq = () => {
           </div>
         </Accordion>
       </div>
-    </div>
+    </>
   );
 };
 
