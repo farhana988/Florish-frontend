@@ -2,6 +2,7 @@ import { bottomLinks, footerData } from "@/data/footerData";
 import Logo from "../Navbar/Logo";
 import FooterSection from "./FooterSection";
 import Link from "next/link";
+import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
   return (
@@ -15,6 +16,7 @@ const Footer = () => {
             occasion. From everyday bouquets to stunning arrangements for
             weddings and events — bringing joy, one bloom at a time.
           </p>
+          <SocialIcons />
         </div>
 
         {/* Dynamic footer sections */}

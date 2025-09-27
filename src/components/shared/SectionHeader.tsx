@@ -15,7 +15,9 @@ const SectionHeader = ({ title, subtitle, className }: SectionHeaderProps) => {
         isHome ? "my-16" : "mt-20 xl:mt-32"
       } ${className}`}
     >
-      <h2 className="text-3xl lg:text-[42px] sm:text-3xl">{title}</h2>
+      <h2 className="text-3xl lg:text-[42px] sm:text-3xl font-medium">
+        {title}
+      </h2>
       {subtitle && (
         <p className="mt-2 xl:text-lg text-gray-500 max-w-9/12 mx-auto">
           {subtitle}
