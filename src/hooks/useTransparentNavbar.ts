@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
 
-const transparentRoutes = ["/", "/shop", "/about", "/contact"];
+const transparentRoutes = ["/", "/shop", "/about", "/plant-care", "/contact"];
 
 export const useTransparentNavbar = (
   scrolled: boolean
@@ -10,9 +10,9 @@ export const useTransparentNavbar = (
 
   const backgroundClass = isTransparentRoute
     ? scrolled
-      ? "bg-black/90 backdrop-blur-md"
+      ? "bg-dGreen backdrop-blur-md"
       : "bg-none"
-    : "bg-black";
+    : "bg-dGreen";
 
   return { backgroundClass, isTransparentRoute };
 };

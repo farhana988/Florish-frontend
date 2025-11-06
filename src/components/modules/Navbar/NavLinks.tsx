@@ -7,11 +7,10 @@ type NavLinksProps = {
 };
 
 const links = [
-  { id: 1, href: "/", label: "Home" },
-  { id: 2, href: "/shop", label: "Shop" },
-  { id: 3, href: "/about", label: "About" },
-  { id: 4, href: "/plant-care", label: "Plant Care" },
-  { id: 5, href: "/contact", label: "Contact" },
+  { id: 1, href: "/shop", label: "Shop" },
+  { id: 2, href: "/about", label: "About" },
+  { id: 3, href: "/plant-care", label: "Plant Care" },
+  { id: 4, href: "/contact", label: "Contact" },
 ];
 
 const NavLinks = ({ onClick, className = "" }: NavLinksProps) => {
@@ -39,10 +38,17 @@ const NavLinks = ({ onClick, className = "" }: NavLinksProps) => {
             `}
           >
             {link.label}
+
+            {/* Dot for active or hover */}
             <span
               className={`
-                absolute left-0 -bottom-1 h-[2px] w-0 bg-white
-                transition-all duration-500 group-hover:w-full
+                absolute left-1/2 -bottom-2 h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-white
+                transition-all duration-300
+                ${
+                  isActive
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
+                }
               `}
             />
           </Link>
