@@ -1,3 +1,5 @@
+"use client";
+
 import { usePathname } from "next/navigation";
 
 const transparentRoutes = ["/", "/shop", "/about", "/plant-care", "/contact"];

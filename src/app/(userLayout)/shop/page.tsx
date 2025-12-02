@@ -1,8 +1,8 @@
-import ShopPage from "@/components/modules/shop/ShopPage";
+import Shop from "@/components/modules/shop/Shop";
 import { plants } from "@/data/plantsData";
 
-const Shop = () => {
-  return <ShopPage initialPlants={plants} />;
+const ShopPage = () => {
+  return <Shop initialPlants={plants} />;
 };
 
-export default Shop;
+export default ShopPage;

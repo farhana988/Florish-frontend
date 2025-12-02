@@ -3,7 +3,7 @@ import MissionSection from "./MissionSection";
 import CoreValuesSection from "./CoreValuesSection";
 import VisionSection from "./VisionSection";
 
-const AboutPage = () => {
+const About = () => {
   return (
     <div className="space-y-16">
       <VisionSection />
@@ -21,4 +21,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default About;

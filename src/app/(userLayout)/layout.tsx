@@ -1,18 +1,12 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import Footer from "@/components/modules/Footer/Footer";
 import Navbar from "@/components/modules/Navbar/Navbar";
-import Banner from "@/components/modules/home/banner/Banner";
-import bannerConfig from "@/components/modules/home/banner/bannerConfig";
+import BannerClient from "@/components/modules/home/banner/BannerClient";
 
 const UserLayout = ({ children }: { children: React.ReactNode }) => {
-  const pathname = usePathname();
-  const bannerData = bannerConfig[pathname];
   return (
     <>
       <Navbar />
-      {bannerData && <Banner {...bannerData} />}
+      <BannerClient />
       <div
         className={`max-w-7xl mx-auto min-h-screen space-y-16 lg:space-y-20 px-6 mt-20 `}
       >

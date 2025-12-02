@@ -10,8 +10,8 @@ interface ShopPageProps {
   initialPlants: Plant[];
 }
 
-const ShopPage = ({ initialPlants }: ShopPageProps) => {
-  const {
+const Shop = ({ initialPlants }: ShopPageProps) => {
+      const {
     searchTerm,
     setSearchTerm,
     sortOption,
@@ -25,8 +25,8 @@ const ShopPage = ({ initialPlants }: ShopPageProps) => {
     console.log(`Add to cart: product ${productId}`);
   };
 
-  return (
-    <>
+    return (
+         <>
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
         <SortSelect value={sortOption} onChange={setSortOption} />
@@ -41,7 +41,7 @@ const ShopPage = ({ initialPlants }: ShopPageProps) => {
         ))}
       </div>
     </>
-  );
+    );
 };
 
-export default ShopPage;
+export default Shop;
