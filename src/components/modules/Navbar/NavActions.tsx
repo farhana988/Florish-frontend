@@ -12,7 +12,7 @@ const NavActions = ({ menuOpen, toggleMenu }: NavActionsProps) => {
       <Link href="/cart" aria-label="Shopping cart">
         <ShoppingBasket />
       </Link>
-      <Link href="/account" aria-label="Account">
+      <Link href="/login" aria-label="Login">
         <CircleUserRound />
       </Link>
 
