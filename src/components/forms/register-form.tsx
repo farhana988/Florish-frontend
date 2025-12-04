@@ -50,7 +50,7 @@ const RegisterForm = () => {
             id="email"
             name="email"
             type="email"
-            placeholder="m@example.com"
+            placeholder="johndoe@example.com"
           />
 
           {getFieldError("email") && (
@@ -62,7 +62,12 @@ const RegisterForm = () => {
         {/* Password */}
         <Field>
           <FieldLabel htmlFor="password">Password</FieldLabel>
-          <Input id="password" name="password" type="password" />
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+          />
 
           {getFieldError("password") && (
             <FieldDescription className="text-red-600">
@@ -73,7 +78,12 @@ const RegisterForm = () => {
         {/* Confirm Password */}
         <Field className="md:col-span-2">
           <FieldLabel htmlFor="confirmPassword">Confirm Password</FieldLabel>
-          <Input id="confirmPassword" name="confirmPassword" type="password" />
+          <Input
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm your password"
+          />
 
           {getFieldError("confirmPassword") && (
             <FieldDescription className="text-red-600">

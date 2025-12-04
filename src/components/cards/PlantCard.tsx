@@ -3,11 +3,7 @@ import Link from "next/link";
 import { Handbag } from "lucide-react";
 import StarRating from "../shared/StarRating";
 import ProductBadge from "../shared/ProductBadge";
-import { Plant } from "@/data/plantsData";
-interface PlantCardProps {
-  plant: Plant;
-  onAddToCart: (e: React.MouseEvent, productId: number) => void;
-}
+import { PlantCardProps } from "@/types/plant";
 
 const PlantCard = ({ plant, onAddToCart }: PlantCardProps) => {
   return (
