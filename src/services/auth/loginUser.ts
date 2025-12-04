@@ -8,9 +8,9 @@ import {
 } from "@/lib/auth-utils";
 import { parse } from "cookie";
 import jwt, { JwtPayload } from "jsonwebtoken";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import z from "zod";
+import { setCookie } from "./tokenHandlers";
 
 const loginValidationZodSchema = z.object({
   email: z.email({
@@ -31,8 +31,8 @@ export const loginUser = async (
   formData: any
 ): Promise<any> => {
   try {
-    const redirectTo = formData.get("redirect")?.toString() || null;
-    console.log(redirectTo, "redirect from server ction");
+    const redirectTo = formData.get("redirect") || null;
+
     let accessTokenObject: null | any = null;
     let refreshTokenObject: null | any = null;
     const loginData = {
@@ -61,7 +61,7 @@ export const loginUser = async (
         "Content-Type": "application/json",
       },
     });
-
+    const result = await res.json();
     const setCookieHeaders = res.headers.getSetCookie();
 
     if (setCookieHeaders && setCookieHeaders.length > 0) {
@@ -87,9 +87,7 @@ export const loginUser = async (
       throw new Error("Tokens not found in cookies");
     }
 
-    const cookieStore = await cookies();
-
-    cookieStore.set("accessToken", accessTokenObject.accessToken, {
+    await setCookie("accessToken", accessTokenObject.accessToken, {
       secure: true,
       httpOnly: true,
       maxAge: parseInt(accessTokenObject["Max-Age"]) || 1000 * 60 * 60,
@@ -97,7 +95,7 @@ export const loginUser = async (
       sameSite: accessTokenObject["SameSite"] || "none",
     });
 
-    cookieStore.set("refreshToken", refreshTokenObject.refreshToken, {
+    await setCookie("refreshToken", refreshTokenObject.refreshToken, {
       secure: true,
       httpOnly: true,
       maxAge:
@@ -105,6 +103,7 @@ export const loginUser = async (
       path: refreshTokenObject.Path || "/",
       sameSite: refreshTokenObject["SameSite"] || "none",
     });
+
     const verifiedToken: JwtPayload | string = jwt.verify(
       accessTokenObject.accessToken,
       process.env.JWT_ACCESS_SECRET as string
@@ -115,18 +114,34 @@ export const loginUser = async (
     }
 
     const userRole: UserRole = verifiedToken.role;
-    console.log(userRole, "userrole");
-    if (redirectTo && isValidRedirectForRole(redirectTo, userRole)) {
-      redirect(redirectTo);
+
+    if (!result.success) {
+      throw new Error(result.message || "Login failed");
+    }
+
+    if (redirectTo) {
+      const requestedPath = redirectTo.toString();
+      if (isValidRedirectForRole(requestedPath, userRole)) {
+        redirect(`${requestedPath}?loggedIn=true`);
+      } else {
+        redirect(`${getDefaultDashboardRoute(userRole)}?loggedIn=true`);
+      }
     } else {
-      redirect(getDefaultDashboardRoute(userRole));
+      redirect(`${getDefaultDashboardRoute(userRole)}?loggedIn=true`);
     }
   } catch (error: any) {
     // Re-throw NEXT_REDIRECT errors so Next.js can handle them
     if (error?.digest?.startsWith("NEXT_REDIRECT")) {
       throw error;
     }
-    console.log(error);
-    return { error: "Login failed" };
+
+    return {
+      success: false,
+      message: `${
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : "Login Failed. You might have entered incorrect email or password."
+      }`,
+    };
   }
 };

@@ -6,7 +6,7 @@ import { useNavbar } from "@/hooks/useNavbar";
 import NavActions from "./NavActions";
 import { useTransparentNavbar } from "@/hooks/useTransparentNavbar";
 
-const Navbar = () => {
+const Navbar = ({ accessToken }: { accessToken: string | null }) => {
   const { scrolled, menuOpen, toggleMenu, closeMenu } = useNavbar();
   const { backgroundClass } = useTransparentNavbar(scrolled);
   return (
@@ -23,7 +23,11 @@ const Navbar = () => {
       </div>
 
       {/* Right-side icons (login/cart/menu) */}
-      <NavActions menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      <NavActions
+        menuOpen={menuOpen}
+        toggleMenu={toggleMenu}
+        accessToken={accessToken}
+      />
 
       {/* Mobile menu component */}
       <MobileMenu isOpen={menuOpen} closeMenu={closeMenu} />

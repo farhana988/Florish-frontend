@@ -80,8 +80,17 @@ export const registerUser = async (
     }).then((res) => res.json());
 
     return res;
-  } catch (error) {
-    console.log(error);
-    return { error: "Registration failed" };
+  } catch (error: any) {
+    if (error?.digest?.startsWith("NEXT_REDIRECT")) {
+      throw error;
+    }
+    return {
+      success: false,
+      message: `${
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : "Registration Failed. Please try again."
+      }`,
+    };
   }
 };

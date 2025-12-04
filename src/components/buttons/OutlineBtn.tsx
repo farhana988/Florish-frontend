@@ -7,7 +7,7 @@ interface BannerButtonProps {
   href?: string;
   onClick?: () => void;
   className?: string;
-  variant?: "default" | "outline" | "ghost" | "link";
+  variant?: "default" | "outline" | "ghost" | "link" | "destructive";
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
 }
@@ -16,7 +16,7 @@ const OutlineBtn: React.FC<BannerButtonProps> = ({
   text,
   href,
   onClick,
-  className = "",
+  className = "bg-black/20 text-white",
   variant = "outline",
   type = "submit",
   disabled = false,
@@ -27,7 +27,7 @@ const OutlineBtn: React.FC<BannerButtonProps> = ({
       variant={variant}
       onClick={onClick}
       disabled={disabled}
-      className={`rounded-full bg-black/20 text-white ${className}`}
+      className={`rounded-full ${className}`}
     >
       {text}
     </Button>

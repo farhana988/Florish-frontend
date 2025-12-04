@@ -42,7 +42,7 @@ const NavLinks = ({ onClick, className = "" }: NavLinksProps) => {
             {/* Dot for active or hover */}
             <span
               className={`
-                absolute left-1/2 -bottom-2 h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-white
+                absolute left-1/2 -bottom-2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-white
                 transition-all duration-300
                 ${
                   isActive

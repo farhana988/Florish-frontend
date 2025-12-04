@@ -7,6 +7,7 @@ import TrendingProducts from "@/components/modules/home/Trending-Products/Trendi
 import WhyChooseUs from "@/components/modules/home/why-choose-us/WhyChooseUs";
 
 const HomePage = () => {
+  console.log("home");
   return (
     <>
       <WhyChooseUs />

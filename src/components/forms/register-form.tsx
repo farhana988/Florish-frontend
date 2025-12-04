@@ -7,15 +7,17 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { Input } from "../ui/input";
 import OutlineBtn from "../buttons/OutlineBtn";
 import LoaderCircle from "../shared/LoaderCircle";
 import { registerUser } from "@/services/auth/registerUser";
+import { useRouter } from "next/navigation";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
 const RegisterForm = () => {
   const [state, formAction, isPending] = useActionState(registerUser, null);
-  // console.log(state, "state");
+  const router = useRouter();
 
   const getFieldError = (fieldName: string) => {
     if (state && state.errors) {
@@ -29,6 +31,18 @@ const RegisterForm = () => {
       return null;
     }
   };
+
+  useEffect(() => {
+    if (!state) return;
+
+    if (!state.success && state.message) {
+      showErrorToast("Registration Failed", state.message);
+    } else if (state.success && state.message) {
+      showSuccessToast("Registration Successful", state.message);
+      router.push("/login");
+    }
+  }, [state, router]);
+
   return (
     <form action={formAction}>
       <FieldGroup>

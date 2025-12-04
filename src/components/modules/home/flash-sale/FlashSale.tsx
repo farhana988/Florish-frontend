@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import OutlineBtn from "../../../buttons/OutlineBtn";
 
 const FlashSale = () => {
@@ -28,11 +27,7 @@ const FlashSale = () => {
             to 50% off on a selection of our best-selling plants.
           </p>
 
-          <OutlineBtn
-            text="Shop Now"
-            href="/shop"
-            className="text-white border-white hover:bg-white hover:text-black"
-          />
+          <OutlineBtn text="Shop Now" href="/shop" />
         </div>
       </div>
     </section>
