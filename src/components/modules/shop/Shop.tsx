@@ -3,15 +3,15 @@
 import PlantCard from "@/components/cards/PlantCard";
 import SearchBar from "@/components/shared/SearchBar";
 import SortSelect from "@/components/shared/SortSelect";
-import { Plant } from "@/data/plantsData";
 import useSearchSort from "@/hooks/useSearchSort";
+import { Plant } from "@/types/plant";
 
 interface ShopPageProps {
   initialPlants: Plant[];
 }
 
 const Shop = ({ initialPlants }: ShopPageProps) => {
-      const {
+  const {
     searchTerm,
     setSearchTerm,
     sortOption,
@@ -25,8 +25,8 @@ const Shop = ({ initialPlants }: ShopPageProps) => {
     console.log(`Add to cart: product ${productId}`);
   };
 
-    return (
-         <>
+  return (
+    <>
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
         <SortSelect value={sortOption} onChange={setSortOption} />
@@ -41,7 +41,7 @@ const Shop = ({ initialPlants }: ShopPageProps) => {
         ))}
       </div>
     </>
-    );
+  );
 };
 
 export default Shop;

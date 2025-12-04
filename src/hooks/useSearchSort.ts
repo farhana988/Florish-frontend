@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { Plant } from "@/data/plantsData";
 import filterSortPlants from "@/components/modules/shop/filterSortProducts";
+import { Plant } from "@/types/plant";
 
 const useSearchSort = (initialPlants: Plant[]) => {
   const [searchTerm, setSearchTerm] = useState("");

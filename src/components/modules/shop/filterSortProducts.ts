@@ -1,4 +1,4 @@
-import { Plant } from "@/data/plantsData";
+import { Plant } from "@/types/plant";
 
 const filterSortPlants = (
   plants: Plant[],

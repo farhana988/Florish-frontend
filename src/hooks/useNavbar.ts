@@ -7,11 +7,11 @@ export const useNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    const scrollThreshold = 100;
     const handleScroll = () => {
-      const scrollThreshold = 100;
       setScrolled(window.scrollY > scrollThreshold);
     };
-
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
