@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
@@ -10,24 +9,18 @@ import { Input } from "../ui/input";
 import OutlineBtn from "../buttons/OutlineBtn";
 import LoaderCircle from "../shared/LoaderCircle";
 import { toast } from "sonner";
+import InputFieldError from "../shared/InputFieldError";
 
 const LoginForm = ({ redirect }: { redirect?: string }) => {
   const [state, formAction, isPending] = useActionState(loginUser, null);
   const [showPassword, setShowPassword] = useState(false);
 
-  const getFieldError = (fieldName: string) => {
-    if (state && state.errors) {
-      const error = state.errors.find((err: any) => err.field === fieldName);
-      return error.message;
-    } else {
-      return null;
-    }
-  };
   useEffect(() => {
     if (state && !state.success && state.message) {
       toast.error(state.message);
     }
   }, [state]);
+
   return (
     <form action={formAction}>
       {redirect && <input type="hidden" name="redirect" value={redirect} />}
@@ -43,11 +36,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               placeholder="johndoe@example.com"
             />
 
-            {getFieldError("email") && (
-              <FieldDescription className="text-red-600">
-                {getFieldError("email")}
-              </FieldDescription>
-            )}
+            <InputFieldError field="email" state={state} />
           </Field>
 
           {/* Password */}
@@ -71,11 +60,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               </button>
             </div>
 
-            {getFieldError("password") && (
-              <FieldDescription className="text-red-600">
-                {getFieldError("password")}
-              </FieldDescription>
-            )}
+            <InputFieldError field="password" state={state} />
           </Field>
         </div>
         <FieldGroup className="mt-4">

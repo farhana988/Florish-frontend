@@ -11,6 +11,8 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 import { redirect } from "next/navigation";
 import z from "zod";
 import { setCookie } from "./tokenHandlers";
+import { serverFetch } from "@/lib/server-fetch";
+import { zodValidator } from "@/lib/zodValidator";
 
 const loginValidationZodSchema = z.object({
   email: z.email({
@@ -40,22 +42,11 @@ export const loginUser = async (
       password: formData.get("password"),
     };
 
-    const validatedFields = loginValidationZodSchema.safeParse(loginData);
-
-    if (!validatedFields.success) {
-      return {
-        success: false,
-        errors: validatedFields.error.issues.map((issue) => {
-          return {
-            field: issue.path[0],
-            message: issue.message,
-          };
-        }),
-      };
+    if (zodValidator(loginData, loginValidationZodSchema).success === false) {
+      return zodValidator(loginData, loginValidationZodSchema);
     }
 
-    const res = await fetch(`${process.env.BASE_URL}/auth/login`, {
-      method: "POST",
+    const res = await serverFetch.post("/auth/login", {
       body: JSON.stringify(loginData),
       headers: {
         "Content-Type": "application/json",

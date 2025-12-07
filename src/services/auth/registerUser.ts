@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
+import { serverFetch } from "@/lib/server-fetch";
+import { zodValidator } from "@/lib/zodValidator";
 import z from "zod";
 
 const registerValidationZodSchema = z
@@ -48,19 +50,11 @@ export const registerUser = async (
       confirmPassword: formData.get("confirmPassword"),
     };
 
-    const validatedFields =
-      registerValidationZodSchema.safeParse(validationData);
-
-    if (!validatedFields.success) {
-      return {
-        success: false,
-        errors: validatedFields.error.issues.map((issue) => {
-          return {
-            field: issue.path[0],
-            message: issue.message,
-          };
-        }),
-      };
+    if (
+      zodValidator(validationData, registerValidationZodSchema).success ===
+      false
+    ) {
+      return zodValidator(validationData, registerValidationZodSchema);
     }
 
     const registerData = {
@@ -74,10 +68,11 @@ export const registerUser = async (
 
     newFormData.append("data", JSON.stringify(registerData));
 
-    const res = await fetch(`${process.env.BASE_URL}/user/register`, {
-      method: "POST",
-      body: newFormData,
-    }).then((res) => res.json());
+    const res = await serverFetch
+      .post("/user/register", {
+        body: newFormData,
+      })
+      .then((res) => res.json());
 
     return res;
   } catch (error: any) {
