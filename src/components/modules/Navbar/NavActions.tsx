@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import OutlineBtn from "@/components/buttons/OutlineBtn";
-import { logoutUser } from "@/services/auth/logoutUser";
+import LogoutButton from "@/components/buttons/LogoutButton";
 
 interface NavActionsProps {
   menuOpen: boolean;
@@ -16,10 +16,6 @@ interface NavActionsProps {
 }
 
 const NavActions = ({ menuOpen, toggleMenu, accessToken }: NavActionsProps) => {
-  const handleLogout = async () => {
-    await logoutUser();
-  };
-
   return (
     <div className="flex items-center gap-4 md:gap-6">
       <Link href="/cart" aria-label="Shopping cart">
@@ -44,7 +40,7 @@ const NavActions = ({ menuOpen, toggleMenu, accessToken }: NavActionsProps) => {
               <Link href="/dashboard">Dashboard</Link>
             </DropdownMenuItem>
             <DropdownMenuItem className="data-highlighted:bg-red-900 data-highlighted:text-white">
-              <button onClick={handleLogout}>Logout</button>
+              <LogoutButton />
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

@@ -1,5 +1,6 @@
 "use client";
 
+import LogoutButton from "@/components/buttons/LogoutButton";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { logoutUser } from "@/services/auth/logoutUser";
+
 import { UserInfo } from "@/types/user.interface";
 import { Settings, User } from "lucide-react";
 import Link from "next/link";
@@ -19,9 +20,6 @@ interface UserDropdownProps {
 }
 
 const UserDropdown = ({ userInfo }: UserDropdownProps) => {
-  const handleLogout = async () => {
-    await logoutUser();
-  };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -56,16 +54,10 @@ const UserDropdown = ({ userInfo }: UserDropdownProps) => {
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          onClick={handleLogout}
-          className="cursor-pointer text-red-900"
+          className="bg-red-800 text-white flex items-center justify-center
+           data-highlighted:bg-red-900 data-highlighted:text-white"
         >
-          <Button
-            variant={"destructive"}
-            onClick={handleLogout}
-            className="w-full"
-          >
-            Logout
-          </Button>
+          <LogoutButton />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

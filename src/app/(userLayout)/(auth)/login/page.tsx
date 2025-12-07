@@ -1,6 +1,6 @@
 import LoginForm from "@/components/forms/login-form";
+import LoginSuccessToast from "@/components/shared/LoginSuccessToast";
 import SectionHeader from "@/components/shared/SectionHeader";
-import React from "react";
 
 const LoginPage = async ({
   searchParams,
@@ -19,6 +19,7 @@ const LoginPage = async ({
           <LoginForm redirect={params.redirect} />
         </div>
       </div>
+      <LoginSuccessToast />
     </>
   );
 };
