@@ -7,7 +7,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 95,
     rating: 4,
-    image: "/plants/plant1.png",
+    image: "https://i.ibb.co/Mkhf67zL/plant1.png",
     badge: "Sale!",
     quantity: 10,
     description:
@@ -19,7 +19,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 92,
     rating: 3,
-    image: "/plants/plant2.png",
+    image: "https://i.ibb.co/Rd6Vy6m/plant2.png",
     quantity: 8,
     description:
       "Silver Mist offers a soothing and calming effect with its silvery-green leaves that shimmer gently in the light. This plant prefers moderate to bright indirect sunlight and thrives best in well-drained soil. It’s known for its air-purifying qualities, which help improve indoor air quality. Its graceful foliage makes it a perfect accent for modern and minimalist decor styles.",
@@ -30,7 +30,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 85,
     rating: 5,
-    image: "/plants/plant3.png",
+    image: "https://i.ibb.co/d4512HbT/plant3.png",
     badge: "New",
     quantity: 5,
     description:
@@ -42,7 +42,7 @@ export const plants: Plant[] = [
     category: "Succulents",
     price: 48,
     rating: 4,
-    image: "/plants/plant4.png",
+    image: "https://i.ibb.co/V0gQjggX/plant4.png",
     badge: "Limited",
     quantity: 12,
     description:
@@ -54,7 +54,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 66,
     rating: 5,
-    image: "/plants/plant5.png",
+    image: "https://i.ibb.co/xStXHm3q/plant5.png",
     quantity: 7,
     description:
       "Patrick Murray is a robust indoor plant with deep green leaves and a bushy form. It is well-suited for indoor environments where it can thrive with moderate indirect light and consistent watering. Known for its air-purifying qualities, this plant can enhance indoor air quality while adding lush greenery to your home or office. It also responds well to occasional fertilizing and pruning to maintain its shape.",
@@ -65,7 +65,7 @@ export const plants: Plant[] = [
     category: "Succulents",
     price: 35,
     rating: 3,
-    image: "/plants/plant6.png",
+    image: "https://i.ibb.co/4wCrNzR2/plant6.png",
     quantity: 20,
     description:
       "Patrycja Chociej is a delightful succulent with thick, waxy leaves that come in beautiful shades of green and purple. This succulent thrives in bright sunlight and requires infrequent watering, making it perfect for busy plant owners. It’s often used in rock gardens or succulent arrangements, where its unique colors provide an eye-catching contrast.",
@@ -76,7 +76,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 70,
     rating: 4,
-    image: "/plants/plant7.png",
+    image: "https://i.ibb.co/BH9WwxKs/plant7.png",
     quantity: 6,
     description:
       "Sterre Reeuwijk is a versatile indoor plant that adds a natural, fresh feel to any room. It prefers bright to medium indirect light and thrives in well-draining soil. Its elegant leaves provide a soothing aesthetic and it is known to improve indoor air quality. Regular misting and watering keep this plant healthy and vibrant throughout the year.",

@@ -1,8 +1,9 @@
 import Shop from "@/components/modules/shop/Shop";
-import { plants } from "@/data/plantsData";
+import { getPlants } from "@/services/admin/plants";
 
-const ShopPage = () => {
-  return <Shop initialPlants={plants} />;
+const ShopPage = async () => {
+  const result = await getPlants();
+  return <Shop initialPlants={result.data} />;
 };
 
 export default ShopPage;

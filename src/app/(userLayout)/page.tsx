@@ -5,13 +5,14 @@ import PromoSection from "@/components/modules/home/Promo/PromoSection";
 import ShowcaseBanner from "@/components/modules/home/ShowcaseBanner/ShowcaseBanner";
 import TrendingProducts from "@/components/modules/home/Trending-Products/TrendingProducts";
 import WhyChooseUs from "@/components/modules/home/why-choose-us/WhyChooseUs";
+import { getPlants } from "@/services/admin/plants";
 
-const HomePage = () => {
-  console.log("home");
+const HomePage = async () => {
+  const result = await getPlants();
   return (
     <>
       <WhyChooseUs />
-      <TrendingProducts />
+      <TrendingProducts plants={result.data} />
       <PromoSection />
       <Categories />
       <FlashSale />
