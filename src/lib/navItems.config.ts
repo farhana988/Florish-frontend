@@ -88,17 +88,17 @@ export const userNavItems: NavSection[] = [
 
 export const adminNavItems: NavSection[] = [
   {
-    title: "Product Management",
+    title: "Plant Management",
     items: [
       {
-        title: "All Products",
-        href: "/admin/dashboard/products",
+        title: "All Plants",
+        href: "/admin/dashboard/all-plants",
         icon: "TreePine",
         roles: ["ADMIN"],
       },
       {
-        title: "Add Product",
-        href: "/admin/dashboard/add-product",
+        title: "Add Plant",
+        href: "/admin/dashboard/add-plant",
         icon: "PlusSquare",
         roles: ["ADMIN"],
       },

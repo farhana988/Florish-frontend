@@ -1,5 +1,3 @@
-import { LucideIcon } from "lucide-react";
-
 export interface Column<T> {
   header: string;
   accessor: keyof T | ((row: T) => React.ReactNode);
@@ -16,13 +14,15 @@ export interface ManagementTableProps<T> {
   emptyMessage?: string;
   isRefreshing?: boolean;
 }
+export interface ManagementAction {
+  label: string;
+  href: string;
+  icon?: React.ElementType;
+}
+
 export interface ManagementPageHeaderProps {
   title: string;
   description?: string;
-  action?: {
-    icon?: LucideIcon;
-    label: string;
-    onClick: () => void;
-  };
+  action?: ManagementAction;
   children?: React.ReactNode;
 }
