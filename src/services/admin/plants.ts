@@ -12,7 +12,7 @@ import {
 // CREATE PLANT
 export async function createPlant(_prevState: any, formData: FormData) {
   try {
-    const payload: IPlant = {
+    const payload: Partial<IPlant> = {
       name: formData.get("name") as string,
       category: formData.get("category") as string,
       price: Number(formData.get("price") as string),

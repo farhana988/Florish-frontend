@@ -102,12 +102,12 @@ export const adminNavItems: NavSection[] = [
         icon: "PlusSquare",
         roles: ["ADMIN"],
       },
-      {
-        title: "Categories",
-        href: "/admin/dashboard/categories",
-        icon: "Tags",
-        roles: ["ADMIN"],
-      },
+      // {
+      //   title: "Categories",
+      //   href: "/admin/dashboard/categories",
+      //   icon: "Tags",
+      //   roles: ["ADMIN"],
+      // },
     ],
   },
   {

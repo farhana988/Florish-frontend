@@ -5,11 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { createPlant } from "@/services/admin/plants";
 import { useActionState, useEffect } from "react";
-import { toast } from "sonner";
 import InputFieldError from "../shared/InputFieldError";
 import SelectField from "../shared/SelectField";
 import OutlineBtn from "../buttons/OutlineBtn";
 import LoaderCircle from "../shared/LoaderCircle";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
 const AddPlantForm = () => {
   const [state, formAction, isPending] = useActionState(createPlant, null);
@@ -17,11 +17,11 @@ const AddPlantForm = () => {
     if (!state) return;
 
     if (state.success === false && state.message) {
-      toast.error(state.message);
+      showErrorToast("Error", state.message);
     }
 
     if (state.success === true && state.message) {
-      toast.success(state.message);
+      showSuccessToast("Success", state.message);
     }
   }, [state]);
 

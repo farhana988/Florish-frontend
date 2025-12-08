@@ -13,10 +13,16 @@ interface SelectFieldProps {
   name: string;
   placeholder?: string;
   options: { label: string; value: string }[];
+  defaultValue?: string;
 }
 
-const SelectField = ({ name, placeholder, options }: SelectFieldProps) => {
-  const [selected, setSelected] = useState("");
+const SelectField = ({
+  name,
+  placeholder,
+  options,
+  defaultValue,
+}: SelectFieldProps) => {
+  const [selected, setSelected] = useState(defaultValue || "");
 
   return (
     <div className="flex flex-col gap-1 w-full">
