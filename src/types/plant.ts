@@ -11,5 +11,4 @@ export interface Plant {
 }
 export interface PlantCardProps {
   plant: Plant;
-  onAddToCart: (e: React.MouseEvent, productId: number) => void;
 }

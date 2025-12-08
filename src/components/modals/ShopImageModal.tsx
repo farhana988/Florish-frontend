@@ -14,8 +14,7 @@ const ShopImageModal = ({ imageSrc, altText }: ImageModalProps) => {
       <button
         aria-label="View image fullscreen"
         onClick={() => setIsOpen(true)}
-        className="absolute top-4 right-4 bg-white p-1.5 rounded-full shadow
-         hover:bg-gray-100 transition"
+        className="absolute top-4 right-4 bg-white p-1.5 rounded-full shadow hover:bg-gray-100 transition"
         type="button"
       >
         <Search className="h-4 w-4 text-dGreen" />

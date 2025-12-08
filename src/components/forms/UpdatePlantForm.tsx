@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useActionState, useEffect, useState } from "react";
-import { toast } from "sonner";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +10,7 @@ import InputFieldError from "../shared/InputFieldError";
 import SelectField from "../shared/SelectField";
 import OutlineBtn from "../buttons/OutlineBtn";
 import LoaderCircle from "../shared/LoaderCircle";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
 const categoryOptions = [
   { label: "Indoor", value: "Indoor" },
@@ -32,7 +32,8 @@ const UpdatePlantForm = ({ id }: { id: string }) => {
     async function fetchPlant() {
       const res = await getPlantById(id);
       if (res.success) setPlant(res.data);
-      else toast.error(res.message || "Failed to fetch plant");
+      else
+        showErrorToast("Failed to fetch plant", res.message || "Unknown error");
     }
     fetchPlant();
   }, [id]);
@@ -41,8 +42,10 @@ const UpdatePlantForm = ({ id }: { id: string }) => {
   useEffect(() => {
     if (!state) return;
 
-    if (state.success === false && state.message) toast.error(state.message);
-    if (state.success === true && state.message) toast.success(state.message);
+    if (state.success === false && state.message)
+      showErrorToast("Error", state.message);
+    if (state.success === true && state.message)
+      showSuccessToast("Success", state.message);
   }, [state]);
 
   if (!plant) return <PageLoading />;

@@ -1,15 +1,14 @@
 "use client";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-
 import { useActionState, useEffect } from "react";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "../ui/field";
 import { loginUser } from "@/services/auth/loginUser";
 import { Input } from "../ui/input";
 import OutlineBtn from "../buttons/OutlineBtn";
 import LoaderCircle from "../shared/LoaderCircle";
-import { toast } from "sonner";
 import InputFieldError from "../shared/InputFieldError";
+import { showErrorToast } from "@/utils/toast";
 
 const LoginForm = ({ redirect }: { redirect?: string }) => {
   const [state, formAction, isPending] = useActionState(loginUser, null);
@@ -17,7 +16,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
 
   useEffect(() => {
     if (state && !state.success && state.message) {
-      toast.error(state.message);
+      showErrorToast("Error", state.message);
     }
   }, [state]);
 

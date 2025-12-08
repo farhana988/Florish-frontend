@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Handbag } from "lucide-react";
@@ -5,8 +6,12 @@ import StarRating from "../shared/StarRating";
 import ProductBadge from "../shared/ProductBadge";
 import { PlantCardProps } from "@/types/plant";
 
-const PlantCard = ({ plant, onAddToCart }: PlantCardProps) => {
+import { useAddToCart } from "@/hooks/useAddToCart";
+
+const PlantCard = ({ plant }: PlantCardProps) => {
+  const { handleAddToCart } = useAddToCart();
   const { name, image, badge, category, price, rating, id } = plant || {};
+
   return (
     <Link href={`/shop/${id}`} className="group space-y-1">
       <div className="relative w-full h-[420px] mb-4 bg-gray-100 rounded overflow-hidden">
@@ -19,7 +24,7 @@ const PlantCard = ({ plant, onAddToCart }: PlantCardProps) => {
 
         {/* Bag Icon */}
         <button
-          onClick={(e) => onAddToCart(e, id)}
+          onClick={(e) => handleAddToCart(e, String(id))} // Explicitly convert id to string
           className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white p-2 rounded-full shadow"
         >
           <Handbag className="text-gray-500" />
