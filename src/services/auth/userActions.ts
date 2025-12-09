@@ -40,15 +40,24 @@ export const changePassword = async (data: {
 // -------------------
 // UPDATE USER INFO
 // -------------------
-export const updateUserInfo = async (id: string, formData: FormData) => {
+
+export const updateUserInfo = async (id: string, payload: any) => {
   try {
-    // Create a FormData-compatible payload
-    const payload: any = {};
-    if (formData.get("name")) payload.name = formData.get("name") as string;
-    if (formData.get("file")) payload.file = formData.get("file") as File;
+    let body;
+    const headers: Record<string, string> = {};
+
+    if (payload instanceof FormData) {
+      // File upload or mixed FormData
+      body = payload;
+    } else {
+      // Normal JSON payload (e.g., just updating name)
+      body = JSON.stringify(payload);
+      headers["Content-Type"] = "application/json";
+    }
 
     const response = await serverFetch.patch(`/user/${id}`, {
-      body: payload instanceof FormData ? payload : JSON.stringify(payload),
+      body,
+      headers,
     });
 
     const result = await response.json();
