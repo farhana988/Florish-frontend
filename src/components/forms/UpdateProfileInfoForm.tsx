@@ -43,7 +43,7 @@ const UpdateProfileInfoForm = ({ userId, currentName, onUpdated }: Props) => {
   };
 
   return (
-    <div>
+    <form className="border p-5 rounded-lg">
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="image">Name</FieldLabel>
@@ -64,7 +64,7 @@ const UpdateProfileInfoForm = ({ userId, currentName, onUpdated }: Props) => {
           type="submit"
         />
       </FieldGroup>
-    </div>
+    </form>
   );
 };
 

@@ -1,21 +1,40 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { serverFetch } from "@/lib/server-fetch";
+"use server";
 
-// ➤ ADD NEW ADDRESS
-export async function addAddress(
-  street: string,
-  city: string,
-  country: string
-) {
+import { serverFetch } from "@/lib/server-fetch";
+import { zodValidator } from "@/lib/zodValidator";
+
+import {
+  createAddressZodSchema,
+  IAddress,
+  updateAddressZodSchema,
+} from "@/types/address.interface";
+
+// CREATE ADDRESS
+export async function createAddress(_prevState: any, formData: FormData) {
   try {
+    const payload: Partial<IAddress> = {
+      street: formData.get("street") as string,
+      city: formData.get("city") as string,
+      country: formData.get("country") as string,
+    };
+
+    const validationResult = zodValidator(payload, createAddressZodSchema);
+    if (!validationResult.success) return validationResult;
+
+    const validatedData = validationResult.data;
+
     const response = await serverFetch.post("/address/add-address", {
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ street, city, country }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(validatedData),
     });
 
     const result = await response.json();
     return result;
   } catch (error: any) {
+    console.error(error);
     return {
       success: false,
       message:
@@ -26,14 +45,15 @@ export async function addAddress(
   }
 }
 
-// ➤ GET ALL ADDRESSES OF USER
+// GET USER'S ADDRESSES
 export async function getAddresses() {
   try {
-    const response = await serverFetch.get("/address", {});
-
+    const response = await serverFetch.get(`/address`);
     const result = await response.json();
+
     return result;
   } catch (error: any) {
+    console.error(error);
     return {
       success: false,
       message:
@@ -44,23 +64,38 @@ export async function getAddresses() {
   }
 }
 
-// ➤ UPDATE ADDRESS
+// UPDATE ADDRESS
 export async function updateAddress(
   addressId: string,
-  data: { street?: string; city?: string; country?: string }
+  _prevState: any,
+  formData: FormData
 ) {
   try {
+    const payload: Partial<IAddress> = {
+      street: formData.get("street") as string,
+      city: formData.get("city") as string,
+      country: formData.get("country") as string,
+    };
+
+    const validation = zodValidator(payload, updateAddressZodSchema);
+    if (!validation.success) return validation;
+
+    const validatedData = validation.data;
+
     const response = await serverFetch.patch(
       `/address/update-address/${addressId}`,
       {
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(validatedData),
       }
     );
 
     const result = await response.json();
     return result;
   } catch (error: any) {
+    console.error(error);
     return {
       success: false,
       message:

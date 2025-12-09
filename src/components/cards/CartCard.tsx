@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from "@/hooks/useCart";
+import AddAddressForm from "../forms/AddAddressForm";
+import { useAddresses } from "@/hooks/useAddress";
 const CartCard = () => {
   const { cartItems } = useCart();
-  console.log(cartItems);
-
+  const { addresses } = useAddresses();
+  console.log(addresses.length);
   const total = cartItems.reduce(
     (sum, item) => sum + item.plant.price * item.quantity,
     0
@@ -25,6 +27,8 @@ const CartCard = () => {
             <span>Total:</span>
             <span>${total.toFixed(2)}</span>
           </div>
+          {addresses.length < 0 && <AddAddressForm />}
+
           <Button variant="default" className="w-full">
             Proceed to Checkout
           </Button>
