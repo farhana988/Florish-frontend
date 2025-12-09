@@ -67,7 +67,7 @@ export const userNavItems: NavSection[] = [
     items: [
       {
         title: "Order History",
-        href: "/dashboard/orders",
+        href: "/dashboard/order-history",
         icon: "ShoppingBag",
         roles: ["USER"],
       },

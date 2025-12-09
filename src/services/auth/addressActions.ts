@@ -3,12 +3,11 @@
 
 import { serverFetch } from "@/lib/server-fetch";
 import { zodValidator } from "@/lib/zodValidator";
-
+import { IAddress } from "@/types/address.interface";
 import {
   createAddressZodSchema,
-  IAddress,
   updateAddressZodSchema,
-} from "@/types/address.interface";
+} from "@/validation/address.validation";
 
 // CREATE ADDRESS
 export async function createAddress(_prevState: any, formData: FormData) {

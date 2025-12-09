@@ -21,6 +21,12 @@ const badgeVariants = cva(
         user: "bg-green-100 text-green-800 [a&]:hover:bg-green-200",
         admin: "bg-blue-100 text-blue-800 [a&]:hover:bg-blue-200",
         super_admin: "bg-red-100 text-red-800 [a&]:hover:bg-red-200",
+        // ✅ Order status custom variants
+        pending: "bg-gray-200 text-gray-800",
+        processing: "bg-yellow-200 text-yellow-800",
+        shipped: "bg-blue-200 text-blue-800",
+        completed: "bg-green-200 text-green-800",
+        cancelled: "bg-red-200 text-red-800",
       },
     },
     defaultVariants: {

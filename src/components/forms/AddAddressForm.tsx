@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
@@ -9,7 +10,7 @@ import LoaderCircle from "@/components/shared/LoaderCircle";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 import { createAddress } from "@/services/auth/addressActions";
 
-const AddAddressForm = () => {
+const AddAddressForm = ({ refresh }: { refresh?: () => void }) => {
   const [state, formAction, isPending] = useActionState(createAddress, null);
 
   useEffect(() => {
@@ -21,6 +22,9 @@ const AddAddressForm = () => {
 
     if (state.success === true && state.message) {
       showSuccessToast("Success", state.message);
+      if (typeof refresh === "function") {
+        refresh();
+      }
     }
   }, [state]);
 

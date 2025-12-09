@@ -7,18 +7,26 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useCart } from "@/hooks/useCart";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
-const CartTable = () => {
-  const {
-    cartItems,
-    handleRemove,
-    handleClear,
-    handleQuantityChange,
-    loadingIds,
-  } = useCart();
+import { ICartItem } from "@/types/cart.interface";
+
+interface CartTableProps {
+  cartItems: ICartItem[];
+  handleRemove: (id: string) => void;
+  handleClear: () => void;
+  handleQuantityChange: (id: string, qty: number) => void;
+  loadingIds: string[];
+}
+
+const CartTable = ({
+  cartItems,
+  handleRemove,
+  handleClear,
+  handleQuantityChange,
+  loadingIds,
+}: CartTableProps) => {
   if (!cartItems.length) return <p className="p-4">Your cart is empty</p>;
   return (
     <div className="space-y-5">
