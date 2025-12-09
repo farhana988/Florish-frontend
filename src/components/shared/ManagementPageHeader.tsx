@@ -10,7 +10,7 @@ const ManagementPageHeader = ({
   children,
 }: ManagementPageHeaderProps) => {
   return (
-    <div className="flex gap-6 flex-col md:flex-row md:items-center justify-between">
+    <div className="flex gap-6 flex-col md:flex-row md:items-center justify-between mb-8">
       <div>
         <h1 className="text-xl xl:text-3xl font-bold">{title}</h1>
         {description && (

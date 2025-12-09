@@ -24,7 +24,7 @@ const PlantCard = ({ plant }: PlantCardProps) => {
 
         {/* Bag Icon */}
         <button
-          onClick={(e) => handleAddToCart(e, String(id))} // Explicitly convert id to string
+          onClick={(e) => handleAddToCart(e, String(id))}
           className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white p-2 rounded-full shadow"
         >
           <Handbag className="text-gray-500" />

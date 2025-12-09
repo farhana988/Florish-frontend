@@ -8,7 +8,7 @@ import { Suspense } from "react";
 const AllPlantsPage = async () => {
   const result = await getPlants();
   return (
-    <div className="space-y-6">
+    <>
       <ManagementPageHeader
         title="Plant Collection Management"
         description="Create, edit, and delete plants, manage their details and care instructions"
@@ -17,13 +17,13 @@ const AllPlantsPage = async () => {
           href: "/admin/dashboard/add-plant",
         }}
       />
-      <div className="flex md:justify-end">
+      <div className="flex md:justify-end mb-8 mt-5 md:mt-0">
         <RefreshButton />
       </div>
       <Suspense fallback={<TableSkeleton columns={2} rows={10} />}>
         <PlantTable plants={result.data} />
       </Suspense>
-    </div>
+    </>
   );
 };
 

@@ -1,10 +1,14 @@
 import AddPlantForm from "@/components/forms/AddPlantForm";
-import SectionHeader from "@/components/shared/SectionHeader";
+import ManagementPageHeader from "@/components/shared/ManagementPageHeader";
 
 const AddPlantPage = () => {
   return (
     <>
-      <SectionHeader title="Create New Plant" />
+      <ManagementPageHeader
+        title="Create New Plant"
+        description="Fill in the details below to add a new plant to the inventory."
+      />
+
       <AddPlantForm />
     </>
   );
