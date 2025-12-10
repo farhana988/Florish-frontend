@@ -25,7 +25,7 @@ const DashboardMobileSidebar = ({
 }: DashboardMobileSidebarContentProps) => {
   const pathname = usePathname();
   return (
-    <div className=" flex h-full flex-col">
+    <div className="bg-dGreen text-white flex h-full flex-col">
       {/* Logo */}
       <div className="flex h-16 items-center border-b px-6">
         <Logo />
@@ -38,7 +38,7 @@ const DashboardMobileSidebar = ({
           {navItems.map((section, sectionIdx) => (
             <div key={sectionIdx}>
               {section.title && (
-                <h4 className="mb-2 px-3 text-xs font-semibold text-muted-foreground uppercase">
+                <h4 className="mb-2 px-3 text-xs font-semibold uppercase">
                   {section.title}
                 </h4>
               )}
@@ -55,7 +55,7 @@ const DashboardMobileSidebar = ({
                         "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all",
                         isActive
                           ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                          : "hover:bg-accent hover:text-accent-foreground"
                       )}
                     >
                       <Icon className="h-4 w-4" />
@@ -87,7 +87,7 @@ const DashboardMobileSidebar = ({
           </div>
           <div className="flex-1 overflow-hidden">
             <p className="text-sm font-medium truncate">{userInfo.name}</p>
-            <p className="text-xs text-muted-foreground capitalize">
+            <p className="text-xs opacity-60 capitalize">
               {userInfo.role.toLowerCase()}
             </p>
           </div>

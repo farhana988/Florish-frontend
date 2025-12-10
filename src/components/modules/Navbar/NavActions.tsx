@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import OutlineBtn from "@/components/buttons/OutlineBtn";
 import LogoutButton from "@/components/buttons/LogoutButton";
+import { useCart } from "@/hooks/useCart";
 
 interface NavActionsProps {
   menuOpen: boolean;
@@ -16,11 +17,22 @@ interface NavActionsProps {
 }
 
 const NavActions = ({ menuOpen, toggleMenu, accessToken }: NavActionsProps) => {
+  const { cartItems } = useCart();
+  const count = cartItems.length;
   return (
     <div className="flex items-center gap-4 md:gap-6">
-      <Link href="/cart" aria-label="Shopping cart">
-        <ShoppingBasket />
-      </Link>
+      <div className="relative flex items-center">
+        <Link href="/cart" aria-label="Shopping cart">
+          <ShoppingBasket className="w-7 h-7" />
+        </Link>
+
+        {count > 0 && (
+          <span
+            className="absolute -top-1 -right-2 bg-white text-white text-xs 
+          font-bold rounded-full w-3 h-3 flex items-center justify-center animate-pulse"
+          ></span>
+        )}
+      </div>
       {accessToken ? (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

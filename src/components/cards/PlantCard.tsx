@@ -7,6 +7,7 @@ import ProductBadge from "../shared/ProductBadge";
 import { PlantCardProps } from "@/types/plant";
 
 import { useAddToCart } from "@/hooks/useAddToCart";
+import WishlistButton from "../buttons/WishlistButton";
 
 const PlantCard = ({ plant }: PlantCardProps) => {
   const { handleAddToCart } = useAddToCart();
@@ -34,11 +35,14 @@ const PlantCard = ({ plant }: PlantCardProps) => {
       </div>
 
       {/* Rating */}
-      {rating ? (
-        <StarRating rating={rating} />
-      ) : (
-        <p className="text-xs text-gray-400 italic">No rating yet</p>
-      )}
+      <div className="flex justify-between items-center">
+        {rating ? (
+          <StarRating rating={rating} />
+        ) : (
+          <p className="text-xs text-gray-400 italic">No rating yet</p>
+        )}
+        <WishlistButton plantId={String(id)} />
+      </div>
 
       <h3 className="font-medium wrap-break-word">{name.slice(0, 30)}</h3>
       <p className="text-[13px] text-gray-500">{category}</p>

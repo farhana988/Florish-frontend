@@ -24,7 +24,7 @@ const DashboardSidebarContent = ({
 }: DashboardSidebarContentProps) => {
   const pathname = usePathname();
   return (
-    <div className="hidden md:flex h-full w-52 lg:w-64 flex-col border-r bg-card">
+    <div className="hidden md:flex h-full w-52 lg:w-64 flex-col border-r bg-dGreen text-white">
       {/* Logo/Brand */}
       <div className="flex h-16 items-center border-b px-6">
         <Logo />
@@ -36,7 +36,7 @@ const DashboardSidebarContent = ({
           {navItems.map((section, sectionIdx) => (
             <div key={sectionIdx}>
               {section.title && (
-                <h4 className="mb-2 px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                <h4 className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider">
                   {section.title}
                 </h4>
               )}
@@ -53,7 +53,7 @@ const DashboardSidebarContent = ({
                         "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all",
                         isActive
                           ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                          : "hover:bg-accent hover:text-accent-foreground"
                       )}
                     >
                       <Icon className="h-4 w-4" />
@@ -88,7 +88,7 @@ const DashboardSidebarContent = ({
           </div>
           <div className="flex-1 overflow-hidden">
             <p className="text-sm font-medium truncate">{userInfo.name}</p>
-            <p className="text-xs text-muted-foreground capitalize">
+            <p className="text-xs opacity-60 capitalize">
               {userInfo.role.toLowerCase()}
             </p>
           </div>

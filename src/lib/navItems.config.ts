@@ -79,17 +79,17 @@ export const userNavItems: NavSection[] = [
       },
     ],
   },
-  {
-    title: "Plant Care",
-    items: [
-      {
-        title: "My Care Guides",
-        href: "/dashboard/care-guides",
-        icon: "Leaf",
-        roles: ["USER"],
-      },
-    ],
-  },
+  // {
+  //   title: "Plant Care",
+  //   items: [
+  //     {
+  //       title: "My Care Guides",
+  //       href: "/dashboard/care-guides",
+  //       icon: "Leaf",
+  //       roles: ["USER"],
+  //     },
+  //   ],
+  // },
 ];
 
 export const adminNavItems: NavSection[] = [

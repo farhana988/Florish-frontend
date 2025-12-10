@@ -1,4 +1,5 @@
 "use client";
+import WishlistButton from "@/components/buttons/WishlistButton";
 import StarRating from "@/components/shared/StarRating";
 import { Button } from "@/components/ui/button";
 import { useAddToCart } from "@/hooks/useAddToCart";
@@ -29,10 +30,7 @@ const ShopInfoSection = ({ plant }: PlantCardProps) => {
         <p className="text-xs text-gray-400 italic">No rating yet</p>
       )}
       {/* Description */}
-      <p
-        className="text-muted-foreground whitespace-pre-line mt-4 xl:mt-6 text-sm 
-          xl:text-base wrap-break-word"
-      >
+      <p className="text-muted-foreground whitespace-pre-line mt-4 xl:mt-6 text-sm xl:text-base wrap-break-word">
         {description}
       </p>
       {/* Quantity  */}
@@ -40,13 +38,17 @@ const ShopInfoSection = ({ plant }: PlantCardProps) => {
       <p className="text-sm text-muted-foreground">
         Available Quantity: <span className="font-semibold">{quantity}</span>
       </p>
-      {/*  Add to Cart */}
-      <Button
-        className="bg-dGreen text-white rounded-full px-6"
-        onClick={(e) => handleAddToCart(e, String(id))}
-      >
-        Add to cart
-      </Button>
+      <div className="flex items-center gap-3 mt-4">
+        {/* Wishlist button */}
+        <WishlistButton plantId={String(id)} />
+        {/*  Add to Cart */}
+        <Button
+          className="bg-dGreen text-white rounded-full px-6"
+          onClick={(e) => handleAddToCart(e, String(id))}
+        >
+          Add to cart
+        </Button>
+      </div>
     </>
   );
 };
