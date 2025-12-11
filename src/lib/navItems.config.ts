@@ -125,12 +125,12 @@ export const adminNavItems: NavSection[] = [
         icon: "Box",
         roles: ["ADMIN"],
       },
-      {
-        title: "Shipping",
-        href: "/admin/dashboard/shipping",
-        icon: "Truck",
-        roles: ["ADMIN"],
-      },
+      // {
+      //   title: "Shipping",
+      //   href: "/admin/dashboard/shipping",
+      //   icon: "Truck",
+      //   roles: ["ADMIN"],
+      // },
     ],
   },
 ];

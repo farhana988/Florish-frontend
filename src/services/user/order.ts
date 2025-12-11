@@ -94,3 +94,57 @@ export async function confirmPayment(orderId: string) {
     };
   }
 }
+
+//   UPDATE ORDER STATUS
+
+export async function updateOrderStatus(orderId: string, status: string) {
+  try {
+    const payload = { status };
+
+    const response = await serverFetch.patch(
+      `/order/update-order-status/${orderId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    console.error(error);
+    return {
+      success: false,
+      message:
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : "Something went wrong",
+    };
+  }
+}
+
+//   CANCEL ORDER
+
+export async function cancelOrder(orderId: string) {
+  try {
+    const response = await serverFetch.patch(`/order/cancel-order/${orderId}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    console.error(error);
+    return {
+      success: false,
+      message:
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : "Something went wrong",
+    };
+  }
+}
