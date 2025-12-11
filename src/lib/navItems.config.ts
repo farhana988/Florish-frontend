@@ -45,12 +45,12 @@ export const superAdminNavItems: NavSection[] = [
   {
     title: "Admin Management",
     items: [
-      {
-        title: "Admins",
-        href: "/super-admin/dashboard/admins",
-        icon: "ShieldCheck",
-        roles: ["SUPER_ADMIN"],
-      },
+      // {
+      //   title: "Admins",
+      //   href: "/super-admin/dashboard/admins",
+      //   icon: "ShieldCheck",
+      //   roles: ["SUPER_ADMIN"],
+      // },
       {
         title: "Add New Admin",
         href: "/super-admin/dashboard/add-admin",
@@ -142,7 +142,7 @@ export const getNavItemsByRole = (role: UserRole): NavSection[] => {
     case "ADMIN":
       return [...commonNavItems, ...adminNavItems];
     case "SUPER_ADMIN":
-      return [...commonNavItems, ...adminNavItems, ...superAdminNavItems];
+      return [...commonNavItems, ...superAdminNavItems];
     case "USER":
       return [...commonNavItems, ...userNavItems];
     default:
