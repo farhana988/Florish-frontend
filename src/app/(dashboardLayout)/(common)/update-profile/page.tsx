@@ -19,10 +19,10 @@ const UpdateProfilePage = async () => {
         {/* Profile Info Section */}
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Profile Information</h2>
-          <UpdateProfileInfoForm userId={user.id} currentName={user.name} />
+          <UpdateProfileInfoForm userId={user?.id} currentName={user?.name} />
         </div>
         {/* Address Section */}
-        {user.addresses.length > 0 ? (
+        {user?.addresses ? (
           <div className="space-y-4">
             <h2 className="text-lg font-semibold">Address</h2>
             <UpdateAddressForm />
