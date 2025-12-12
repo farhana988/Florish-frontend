@@ -87,7 +87,7 @@ export const plants: Plant[] = [
     category: "Succulents",
     price: 40,
     rating: 5,
-    image: "/plants/plant8.png",
+    image: "https://i.ibb.co/ymhFTk6q/plant8.png",
     badge: "New",
     quantity: 15,
     description:
@@ -99,7 +99,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 80,
     rating: 3,
-    image: "/plants/plant9.png",
+    image: "https://i.ibb.co/ZzbFq1FK/plant9.png",
     quantity: 9,
     description:
       "Hermes Rivera stands out with its striking foliage and sturdy growth. This indoor plant prefers moderate indirect light and needs regular watering, but avoid waterlogging. It is an excellent choice for adding a statement piece in your home or office, and its air-purifying properties make it both functional and beautiful.",
@@ -110,7 +110,7 @@ export const plants: Plant[] = [
     category: "Succulents",
     price: 50,
     rating: 4,
-    image: "/plants/plant10.png",
+    image: "https://i.ibb.co/kg11qtnn/plant10.png",
     quantity: 14,
     description:
       "Galina is a delicate succulent that thrives in bright, indirect sunlight. Its small rosettes and fleshy leaves make it ideal for succulent gardens and container planting. This plant requires infrequent watering and well-drained soil, making it perfect for those who prefer easy-care plants with elegant form.",
@@ -121,7 +121,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 60,
     rating: 5,
-    image: "/plants/plant11.png",
+    image: "https://i.ibb.co/QjYZyxdg/plant11.png",
     badge: "Sale!",
     quantity: 11,
     description:
@@ -133,7 +133,7 @@ export const plants: Plant[] = [
     category: "Succulents",
     price: 45,
     rating: 4,
-    image: "/plants/plant12.png",
+    image: "https://i.ibb.co/NQ5yFGb/plant12.png",
     quantity: 13,
     description:
       "Stephanie Harvey is a compact succulent that fits beautifully in smaller spaces such as desks and shelves. It requires minimal watering and prefers bright indirect light. Its thick leaves are covered with a powdery coating that protects it from harsh sunlight, making it highly resilient and easy to care for.",
@@ -144,7 +144,7 @@ export const plants: Plant[] = [
     category: "Indoor Plants",
     price: 75,
     rating: 4,
-    image: "/plants/plant13.png",
+    image: "https://i.ibb.co/1JmnbxhF/plant13.png",
     quantity: 8,
     description:
       "Sanni Sahil is a graceful indoor plant with lush, green leaves that create a tranquil atmosphere. It grows best in moderate indirect sunlight and needs regular watering with well-drained soil. This plant is perfect for enhancing living rooms or offices with a touch of nature and elegance.",
@@ -155,7 +155,7 @@ export const plants: Plant[] = [
     category: "Succulents",
     price: 55,
     rating: 5,
-    image: "/plants/plant14.png",
+    image: "https://i.ibb.co/jkWQhTLj/plant14.png",
     badge: "New",
     quantity: 10,
     description:

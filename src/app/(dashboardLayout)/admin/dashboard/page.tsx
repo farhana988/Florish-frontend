@@ -1,5 +1,12 @@
+import DashboardWelcome from "@/components/shared/DashboardWelcome";
+
 const AdminDashboardPage = () => {
-  return <div>AdminDashboardPage</div>;
+  return (
+    <DashboardWelcome
+      title="Welcome Back Admin 👋"
+      subtitle="Hello, Admin! 🔧"
+    ></DashboardWelcome>
+  );
 };
 
 export default AdminDashboardPage;
