@@ -16,7 +16,7 @@ const OrderDetailsPage = async ({
 
   const res = await getOrderDetails(id);
   const order = res.data;
-  console.log(order);
+
   if (!order) {
     return <PageLoading />;
   }

@@ -1,4 +1,3 @@
-"use client";
 import PlantCard from "@/components/cards/PlantCard";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Plant } from "@/types/plant";
@@ -6,12 +5,6 @@ interface TrendingProps {
   plants: Plant[];
 }
 const TrendingProducts = ({ plants }: TrendingProps) => {
-  const handleAddToCart = (e: React.MouseEvent, productId: number) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log(`Add to cart: product ${productId}`);
-  };
-
   return (
     <>
       <SectionHeader title="Trending Plants" />

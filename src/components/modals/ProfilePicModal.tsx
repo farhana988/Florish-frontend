@@ -19,7 +19,6 @@ interface Props {
   onUpdated?: (data: any) => void;
 }
 const ProfilePicModal = ({ userId, onUpdated }: Props) => {
-  console.log(userId);
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
 

@@ -13,7 +13,7 @@ type CartCardProps = {
 };
 const CartCard = ({ total, handleClear }: CartCardProps) => {
   const { addresses, refresh } = useAddresses();
-  console.log(addresses);
+
   const [paymentType, setPaymentType] = useState<"COD" | "STRIPE">("COD");
   return (
     <div className="space-y-5">

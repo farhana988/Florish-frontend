@@ -22,7 +22,7 @@ const UpdateProfilePage = async () => {
           <UpdateProfileInfoForm userId={user?.id} currentName={user?.name} />
         </div>
         {/* Address Section */}
-        {user?.addresses ? (
+        {user?.address.city ? (
           <div className="space-y-4">
             <h2 className="text-lg font-semibold">Address</h2>
             <UpdateAddressForm />
