@@ -95,6 +95,25 @@ export async function confirmPayment(orderId: string) {
   }
 }
 
+//   GET ALL ORDERS (ADMIN)
+
+export async function getAllOrders() {
+  try {
+    const response = await serverFetch.get("/order/all-orders");
+
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    console.error(error);
+    return {
+      success: false,
+      message:
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : "Something went wrong",
+    };
+  }
+}
 //   UPDATE ORDER STATUS
 
 export async function updateOrderStatus(orderId: string, status: string) {

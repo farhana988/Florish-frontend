@@ -1,9 +1,9 @@
 import ManagementPageHeader from "@/components/shared/ManagementPageHeader";
 import OrderTable from "@/components/tables/OrderTable";
-import { getUserOrders } from "@/services/user/order";
+import { getAllOrders } from "@/services/user/order";
 
 const OrderManagementPage = async () => {
-  const res = await getUserOrders();
+  const res = await getAllOrders();
   const orders = res.data ?? [];
   return (
     <>
