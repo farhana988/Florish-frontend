@@ -27,7 +27,6 @@ const CartTable = ({
   handleQuantityChange,
   loadingIds,
 }: CartTableProps) => {
-  if (!cartItems.length) return <p className="p-4">Your cart is empty</p>;
   return (
     <div className="space-y-5">
       <div className="flex justify-between gap-6 items-center">

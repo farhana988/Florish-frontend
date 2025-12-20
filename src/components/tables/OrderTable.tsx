@@ -104,7 +104,7 @@ const OrderTable = ({ orders }: any) => {
                   <p className="text-blue-500">{order.id.slice(0, 6)}</p>
                 </Link>
               </TableCell>
-              <TableCell>${order.totalPrice}</TableCell>
+              <TableCell>${order.finalPrice}</TableCell>
               <TableCell>{order.paymentStatus}</TableCell>
               <TableCell>{order.items.length}</TableCell>
               <TableCell>

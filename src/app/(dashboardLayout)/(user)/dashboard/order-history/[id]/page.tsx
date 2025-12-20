@@ -27,6 +27,7 @@ const OrderDetailsPage = async ({
     hour: "numeric",
     minute: "numeric",
   });
+  const discountAmount = order.totalPrice - order.finalPrice;
 
   return (
     <>
@@ -97,11 +98,11 @@ const OrderDetailsPage = async ({
             </div>
             <div className="flex justify-between items-center ">
               Discount
-              <p> - 0.00</p>
+              <p> - ${discountAmount.toFixed(2)}</p>
             </div>
             <div className="flex justify-between items-center font-semibold ">
               Total
-              <p>${order.totalPrice}</p>
+              <p>${order.finalPrice}</p>
             </div>
           </CardContent>
         </Card>

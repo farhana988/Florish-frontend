@@ -1,13 +1,8 @@
 import Cart from "@/components/modules/cart/Cart";
-import SectionHeader from "@/components/shared/SectionHeader";
 
-const CartPage = () => {
+const CartPage = async () => {
   return (
     <>
-      <SectionHeader
-        title="Shopping Cart"
-        subtitle=" Review your items before proceeding to checkout."
-      />
       <Cart />
     </>
   );

@@ -49,7 +49,7 @@ const OrderHistoryPage = async () => {
               <CardContent className="text-sm">
                 <p>
                   <span className="text-gray-600">Grand Total:</span>{" "}
-                  <span className="font-semibold">${o.totalPrice}</span>
+                  <span className="font-semibold">${o.finalPrice}</span>
                 </p>
 
                 <p>

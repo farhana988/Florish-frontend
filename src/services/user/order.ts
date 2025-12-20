@@ -7,10 +7,14 @@ import { serverFetch } from "@/lib/server-fetch";
 
 export async function createOrder(formData: FormData) {
   try {
-    const payload = {
+    const payload: any = {
       addressId: formData.get("addressId"),
       paymentType: formData.get("paymentType"), // "COD" | "STRIPE"
     };
+    const couponCode = formData.get("couponCode");
+    if (couponCode) {
+      payload.couponCode = couponCode;
+    }
 
     const response = await serverFetch.post("/order/create-order", {
       headers: {

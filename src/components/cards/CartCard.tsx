@@ -65,8 +65,22 @@ const CartCard = ({ total, handleClear }: CartCardProps) => {
               />
 
               <input type="hidden" name="paymentType" value={paymentType} />
-
-              <Button type="submit" className="w-full">
+              <div className="flex flex-col">
+                <label
+                  htmlFor="couponCode"
+                  className="text-sm font-medium mb-1"
+                >
+                  Coupon Code
+                </label>
+                <input
+                  type="text"
+                  name="couponCode"
+                  id="couponCode"
+                  placeholder="Enter coupon code"
+                  className="border p-2 rounded"
+                />
+              </div>
+              <Button type="submit" className="w-full mt-6">
                 Place Order
               </Button>
             </form>
