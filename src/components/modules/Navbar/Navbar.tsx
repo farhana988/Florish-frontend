@@ -11,26 +11,27 @@ const Navbar = ({ accessToken }: { accessToken: string | null }) => {
   const { backgroundClass } = useTransparentNavbar(scrolled);
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 max-w-[1600px] mx-auto px-6 
-        flex justify-between items-center text-white transition-colors duration-300 
+      className={`fixed top-0 left-0 right-0 z-50
         ${backgroundClass}`}
     >
-      {/* Logo component */}
-      <Logo />
-      {/* Desktop navigation links*/}
-      <div className="hidden lg:flex">
-        <NavLinks />
+      <div className="max-w-7xl mx-auto px-6 xl:pl-0 flex justify-between items-center text-white transition-colors duration-300 ">
+        {/* Logo component */}
+        <Logo />
+        {/* Desktop navigation links*/}
+        <div className="hidden lg:flex">
+          <NavLinks />
+        </div>
+
+        {/* Right-side icons (login/cart/menu) */}
+        <NavActions
+          menuOpen={menuOpen}
+          toggleMenu={toggleMenu}
+          accessToken={accessToken}
+        />
+
+        {/* Mobile menu component */}
+        <MobileMenu isOpen={menuOpen} closeMenu={closeMenu} />
       </div>
-
-      {/* Right-side icons (login/cart/menu) */}
-      <NavActions
-        menuOpen={menuOpen}
-        toggleMenu={toggleMenu}
-        accessToken={accessToken}
-      />
-
-      {/* Mobile menu component */}
-      <MobileMenu isOpen={menuOpen} closeMenu={closeMenu} />
     </div>
   );
 };
