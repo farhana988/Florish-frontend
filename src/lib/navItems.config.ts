@@ -94,6 +94,17 @@ export const userNavItems: NavSection[] = [
 
 export const adminNavItems: NavSection[] = [
   {
+    title: "Analytics",
+    items: [
+      {
+        title: "Overview",
+        href: "/admin/dashboard/overview",
+        icon: "BarChart3",
+        roles: ["ADMIN"],
+      },
+    ],
+  },
+  {
     title: "Plant Management",
     items: [
       {
