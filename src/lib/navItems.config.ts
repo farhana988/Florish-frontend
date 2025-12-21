@@ -139,7 +139,13 @@ export const adminNavItems: NavSection[] = [
       {
         title: "Add Coupons",
         href: "/admin/dashboard/add-coupons",
-        icon: "TicketPercent",
+        icon: "TicketPlus",
+        roles: ["ADMIN"],
+      },
+      {
+        title: "All Coupons",
+        href: "/admin/dashboard/all-coupons",
+        icon: "Ticket",
         roles: ["ADMIN"],
       },
     ],

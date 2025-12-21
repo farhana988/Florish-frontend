@@ -24,7 +24,7 @@ const CouponCard = ({ coupon }: { coupon: any }) => {
   const colors = getCouponColors(coupon.discountValue);
 
   return (
-    <div className="flex w-96 h-52 rounded-lg overflow-hidden shadow-md shrink-0">
+    <div className="relative flex w-96 h-52 rounded-lg overflow-hidden shadow-md shrink-0">
       <div
         className={`flex-1 flex items-center px-6 py-5 relative  ${colors.bgMain}`}
       >

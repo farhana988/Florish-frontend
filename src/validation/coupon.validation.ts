@@ -15,7 +15,8 @@ export const createCouponZodSchema = z.object({
 
   discountValue: z
     .number({ message: "Discount value is required" })
-    .min(1, { message: "Discount must be at least 1" }),
+    .min(1, { message: "Discount must be at least 1" })
+    .max(90, { message: "Discount cannot be more than 90%" }),
   minOrderValue: z.number({ message: "Min order value must be a number" }),
 
   maxDiscount: z.number({ message: "Max discount must be a number" }),
