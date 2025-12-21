@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import PlantCard from "@/components/cards/PlantCard";
 import ShopImageModal from "@/components/modals/ShopImageModal";
+import ShopCoupons from "@/components/modules/shop-details/ShopCoupons";
 import ShopBreadcrumb from "@/components/modules/shop/ShopBreadcrumb";
 import ShopInfoSection from "@/components/modules/shop/ShopInfoSection";
 import PageLoading from "@/components/shared/PageLoading";
 import ProductBadge from "@/components/shared/ProductBadge";
-import { getPlantById } from "@/services/admin/plants";
+import { getPlantById, getPlants } from "@/services/admin/plants";
+import { getAllCoupons } from "@/services/user/coupon";
 import Image from "next/image";
 
 const ShopDetails = async ({ params }: { params: Promise<{ id: string }> }) => {
@@ -14,6 +18,20 @@ const ShopDetails = async ({ params }: { params: Promise<{ id: string }> }) => {
     return <PageLoading />;
   }
   const { name, image, badge, category } = plant.data;
+
+  // Fetch all plants
+  const allPlants = await getPlants();
+
+  if (!allPlants?.data) return [];
+
+  // Filter plants by category and optionally exclude the current plant
+  const relatedPlants =
+    allPlants?.data?.filter(
+      (p: any) => p.category === category && p.id !== id
+    ) ?? [];
+
+  const coupons = await getAllCoupons();
+
   return (
     <>
       {/* Breadcrumb */}
@@ -42,6 +60,17 @@ const ShopDetails = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           <ShopInfoSection plant={plant.data} />
         </div>
+      </div>
+
+      {/* coupons */}
+      <ShopCoupons coupons={coupons.data ?? []} />
+
+      {/* related plant */}
+      <h2 className="text-xl font-semibold mb-4 mt-20">You Might Also Like</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        {relatedPlants.slice(0, 3).map((plant: any) => (
+          <PlantCard key={plant.id} plant={plant} />
+        ))}
       </div>
     </>
   );
