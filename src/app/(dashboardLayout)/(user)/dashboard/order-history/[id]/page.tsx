@@ -41,7 +41,7 @@ const OrderDetailsPage = async ({
         <Card>
           <CardContent>
             <p className="font-bold text-lg">
-              Order ID: #{order.id.slice(0, 6)}
+              Order ID: #{order?.id?.slice(0, 6)}
             </p>
             <p className="text-sm text-muted-foreground">{created}</p>
           </CardContent>

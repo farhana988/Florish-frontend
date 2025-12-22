@@ -68,7 +68,7 @@ const ShopDetails = async ({ params }: { params: Promise<{ id: string }> }) => {
       {/* related plant */}
       <h2 className="text-xl font-semibold mb-4 mt-20">You Might Also Like</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        {relatedPlants.slice(0, 3).map((plant: any) => (
+        {(relatedPlants || []).slice(0, 3).map((plant: any) => (
           <PlantCard key={plant.id} plant={plant} />
         ))}
       </div>

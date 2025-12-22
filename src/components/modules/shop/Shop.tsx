@@ -30,7 +30,7 @@ const Shop = ({ initialPlants }: ShopPageProps) => {
   const totalPages = Math.ceil(filteredAndSortedPlants.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentPlants = filteredAndSortedPlants.slice(
+  const currentPlants = filteredAndSortedPlants?.slice(
     startIndex,
     startIndex + itemsPerPage
   );

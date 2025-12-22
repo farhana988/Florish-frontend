@@ -21,7 +21,7 @@ const PlantCareCard = ({ tip }: PlantCareCardProps) => {
         </div>
         <div className="mt-4 text-left">
           <a
-            href="#"
+            href={tip.link}
             className="hover:underline hover:underline-offset-8 hover:text-blue-500 whitespace-nowrap flex items-center gap-1 text-gray-600 text-sm"
           >
             Continue Reading

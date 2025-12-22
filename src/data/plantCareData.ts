@@ -1,4 +1,6 @@
-export const tips = [
+import { Tip } from "@/types/plant-care-types";
+
+export const tips: Tip[] = [
   {
     id: 1,
     title: "How To Pot Plants",
@@ -6,6 +8,7 @@ export const tips = [
     description:
       "Discover essential tips to keep your indoor plants thriving, from proper watering to choosing the right soil.",
     image: "/plantCare/plant-care1.jpg",
+    link: "https://example.com/blog/how-to-pot-plants",
   },
   {
     id: 2,
@@ -14,6 +17,7 @@ export const tips = [
     description:
       "Learn how different types of light affect plant growth and how to find the best spot in your home.",
     image: "/plantCare/plant-care2.jpg",
+    link: "https://gardeningtips.com/sunlight-guide",
   },
   {
     id: 3,
@@ -22,6 +26,7 @@ export const tips = [
     description:
       "Explore unique and stylish ways to showcase your plants around the house for a fresh, natural vibe.",
     image: "/plantCare/plant-care3.jpg",
+    link: "https://interiordesign.com/plant-display-ideas",
   },
   {
     id: 4,
@@ -30,6 +35,7 @@ export const tips = [
     description:
       "Proper watering is key to a plant's health. Learn how to avoid overwatering and underwatering your plants.",
     image: "/plantCare/plant-care4.jpg",
+    link: "https://plantcareguide.com/watering-basics",
   },
   {
     id: 5,
@@ -38,6 +44,7 @@ export const tips = [
     description:
       "Find out the best techniques for pruning and trimming your plants to encourage healthy growth and avoid damage.",
     image: "/plantCare/plant-care5.jpg",
+    link: "https://gardeningexpert.com/pruning-techniques",
   },
   // {
   //   id: 6,

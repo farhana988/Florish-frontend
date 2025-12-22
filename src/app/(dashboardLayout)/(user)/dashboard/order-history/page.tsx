@@ -38,7 +38,7 @@ const OrderHistoryPage = async () => {
               {/* Card Header */}
               <CardHeader className="flex justify-between">
                 <span className="font-semibold">
-                  Order ID: {o.id.slice(0, 6)}
+                  Order ID: {o?.id?.slice(0, 6)}
                 </span>
                 <Badge variant={statusVariant[o.status as OrderStatus]}>
                   {o.status}

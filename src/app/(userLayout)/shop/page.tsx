@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Shop from "@/components/modules/shop/Shop";
 import { getPlants } from "@/services/admin/plants";
 
