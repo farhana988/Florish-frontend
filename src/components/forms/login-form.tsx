@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useActionState, useEffect } from "react";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "../ui/field";
@@ -9,6 +9,7 @@ import OutlineBtn from "../buttons/OutlineBtn";
 import LoaderCircle from "../shared/LoaderCircle";
 import InputFieldError from "../shared/InputFieldError";
 import { showErrorToast } from "@/utils/toast";
+import { Button } from "../ui/button";
 
 const LoginForm = ({ redirect }: { redirect?: string }) => {
   const [state, formAction, isPending] = useActionState(loginUser, null);
@@ -20,6 +21,21 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
     }
   }, [state]);
 
+  const formRef = useRef<HTMLFormElement>(null);
+
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const quickLogin = (
+  userEmail: string,
+  userPassword: string
+) => {
+  setEmail(userEmail);
+  setPassword(userPassword);
+
+  setTimeout(() => {
+    formRef.current?.requestSubmit();
+  }, 0);
+};
   return (
     <form action={formAction}>
       {redirect && <input type="hidden" name="redirect" value={redirect} />}
@@ -32,6 +48,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               id="email"
               name="email"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="johndoe@example.com"
             />
 
@@ -47,6 +64,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
                 name="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
+                  onChange={(e) => setPassword(e.target.value)}
                 className="pr-10"
               />
 
@@ -88,6 +106,32 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
           </Field>
         </FieldGroup>
       </FieldGroup>
+<div className="grid grid-cols-2 gap-3 mt-4">
+  <Button
+    type="button"
+    onClick={() =>
+      quickLogin(
+        "admin@gmail.com",
+        "123456aA@"
+      )
+    }
+  >
+    Login as Admin
+  </Button>
+
+  <Button
+    type="button"
+    variant="secondary"
+    onClick={() =>
+      quickLogin(
+        "superadmin@gmail.com",
+        "12345678"
+      )
+    }
+  >
+    Login as Super Admin
+  </Button>
+</div>
     </form>
   );
 };
