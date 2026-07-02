@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Crown, Eye, EyeOff, ShieldCheck } from "lucide-react";
 import { useActionState, useEffect } from "react";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "../ui/field";
 import { loginUser } from "@/services/auth/loginUser";
@@ -14,7 +14,8 @@ import { Button } from "../ui/button";
 const LoginForm = ({ redirect }: { redirect?: string }) => {
   const [state, formAction, isPending] = useActionState(loginUser, null);
   const [showPassword, setShowPassword] = useState(false);
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   useEffect(() => {
     if (state && !state.success && state.message) {
       showErrorToast("Error", state.message);
@@ -23,21 +24,17 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const quickLogin = (
-  userEmail: string,
-  userPassword: string
-) => {
-  setEmail(userEmail);
-  setPassword(userPassword);
+  const quickLogin = (userEmail: string, userPassword: string) => {
+    setEmail(userEmail);
+    setPassword(userPassword);
 
-  setTimeout(() => {
-    formRef.current?.requestSubmit();
-  }, 0);
-};
+    requestAnimationFrame(() => {
+      formRef.current?.requestSubmit();
+    });
+  };
+
   return (
-    <form action={formAction}>
+    <form ref={formRef} action={formAction}>
       {redirect && <input type="hidden" name="redirect" value={redirect} />}
       <FieldGroup>
         <div className="grid grid-cols-1 gap-4">
@@ -48,6 +45,7 @@ const quickLogin = (
               id="email"
               name="email"
               type="email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="johndoe@example.com"
             />
@@ -63,8 +61,9 @@ const quickLogin = (
                 id="password"
                 name="password"
                 type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                  onChange={(e) => setPassword(e.target.value)}
                 className="pr-10"
               />
 
@@ -106,32 +105,39 @@ const quickLogin = (
           </Field>
         </FieldGroup>
       </FieldGroup>
-<div className="grid grid-cols-2 gap-3 mt-4">
-  <Button
-    type="button"
-    onClick={() =>
-      quickLogin(
-        "admin@gmail.com",
-        "123456aA@"
-      )
-    }
-  >
-    Login as Admin
-  </Button>
+      <div className="grid grid-cols-2 gap-4 mt-6">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() =>
+            quickLogin(
+              process.env.NEXT_PUBLIC_ADMIN_EMAIL!,
+              process.env.NEXT_PUBLIC_ADMIN_PASSWORD!,
+            )
+          }
+          className=" border-blue-200 bg-blue-50 text-blue-700 hover:text-black
+           hover:bg-blue-300 shadow-sm hover:shadow-lg"
+        >
+          <ShieldCheck className="w-5 h-5 mr-2" />
+          Login as Admin
+        </Button>
 
-  <Button
-    type="button"
-    variant="secondary"
-    onClick={() =>
-      quickLogin(
-        "superadmin@gmail.com",
-        "12345678"
-      )
-    }
-  >
-    Login as Super Admin
-  </Button>
-</div>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() =>
+            quickLogin(
+              process.env.NEXT_PUBLIC_SUPER_ADMIN_EMAIL!,
+              process.env.NEXT_PUBLIC_SUPER_ADMIN_PASSWORD!,
+            )
+          }
+          className=" border-purple-200 bg-purple-50 text-purple-700 hover:text-black
+           hover:bg-purple-300 shadow-sm hover:shadow-lg"
+        >
+          <Crown className="w-5 h-5 mr-2" />
+          Login as Super Admin
+        </Button>
+      </div>
     </form>
   );
 };
